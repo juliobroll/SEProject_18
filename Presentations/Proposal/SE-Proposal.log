@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.13)  14 FEB 2018 01:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.13)  14 FEB 2018 10:55
 entering extended mode
 **SE-Proposal.tex
 (SE-Proposal.tex
@@ -1159,7 +1159,7 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
 
 [2
 
-] <Ratio_firms.jpeg, id=33, 301.125pt x 246.1697pt>
+] <Ratio_firms.jpeg, id=37, 301.125pt x 246.1697pt>
 File: Ratio_firms.jpeg Graphic file (type jpg)
  <use Ratio_firms.jpeg>
 Package pdftex.def Info: Ratio_firms.jpeg used on input line 69.
@@ -1171,7 +1171,7 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
 
 [3
 
- <./Ratio_firms.jpeg>] <Ratio_emp.jpeg, id=41, 301.125pt x 246.1697pt>
+ <./Ratio_firms.jpeg>] <Ratio_emp.jpeg, id=45, 301.125pt x 246.1697pt>
 File: Ratio_emp.jpeg Graphic file (type jpg)
 
 <use Ratio_emp.jpeg>
@@ -1191,7 +1191,7 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
 
 [5
 
-] <Innov_2.png, id=56, 289.68225pt x 175.25475pt>
+] <Innov_2.png, id=60, 289.68225pt x 175.25475pt>
 File: Innov_2.png Graphic file (type png)
  <use Innov_2.png>
 Package pdftex.def Info: Innov_2.png used on input line 108.
@@ -1203,7 +1203,7 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
 
 [6
 
- <./Innov_2.png>] <Innov_3.png, id=64, 289.68225pt x 175.25475pt>
+ <./Innov_2.png>] <Innov_3.png, id=68, 289.68225pt x 175.25475pt>
 File: Innov_3.png Graphic file (type png)
 
 <use Innov_3.png>
@@ -1216,7 +1216,7 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
 
 [7
 
- <./Innov_3.png>] <Innov_4.png, id=73, 289.68225pt x 175.25475pt>
+ <./Innov_3.png>] <Innov_4.png, id=77, 289.68225pt x 175.25475pt>
 File: Innov_4.png Graphic file (type png)
 
 <use Innov_4.png>
@@ -1229,7 +1229,7 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
 
 [8
 
- <./Innov_4.png>] <Innov_5.png, id=81, 289.68225pt x 175.25475pt>
+ <./Innov_4.png>] <Innov_5.png, id=85, 289.68225pt x 175.25475pt>
 File: Innov_5.png Graphic file (type png)
 
 <use Innov_5.png>
@@ -1242,7 +1242,7 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
 
 [9
 
- <./Innov_5.png>] <Innov_6.png, id=89, 289.68225pt x 175.25475pt>
+ <./Innov_5.png>] <Innov_6.png, id=93, 289.68225pt x 175.25475pt>
 File: Innov_6.png Graphic file (type png)
 
 <use Innov_6.png>
@@ -1255,7 +1255,7 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
 
 [10
 
- <./Innov_6.png>] <Innov_7.png, id=97, 292.09125pt x 175.25475pt>
+ <./Innov_6.png>] <Innov_7.png, id=101, 292.09125pt x 175.25475pt>
 File: Innov_7.png Graphic file (type png)
 
 <use Innov_7.png>
@@ -1296,20 +1296,6 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
 
 [15
 
-]
-Overfull \hbox (51.54921pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[16
-
-]
-Overfull \hbox (51.54921pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[17
-
 ] (SE-Proposal.bbl
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1324,6 +1310,20 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
  [][][][]  
  []
 
+[16
+
+]
+Overfull \hbox (51.54921pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[17
+
+]
+Overfull \hbox (51.54921pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [18
 
 ]
@@ -1332,29 +1332,17 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
 \tf@snm=\write8
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 266.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 266.
- (SE-Proposal.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+ (SE-Proposal.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 266.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 266.
-
-
-Package rerunfilecheck Warning: File `SE-Proposal.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `SE-Proposal.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  8A4411D8FDC471D5B1172A69FD03E390;46.
+Package rerunfilecheck Info: File `SE-Proposal.out' has not changed.
+(rerunfilecheck)             Checksum: 8A4411D8FDC471D5B1172A69FD03E390;46.
  ) 
 Here is how much of TeX's memory you used:
- 18818 strings out of 493636
- 350840 string characters out of 3143738
- 434336 words of memory out of 3000000
- 21714 multiletter control sequences out of 15000+200000
+ 18823 strings out of 493636
+ 350878 string characters out of 3143738
+ 434431 words of memory out of 3000000
+ 21719 multiletter control sequences out of 15000+200000
  11646 words of font info for 42 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  56i,20n,57p,800b,614s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1372,9 +1360,9 @@ fonts/cm/cmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on SE-Proposal.pdf (18 pages, 345355 bytes).
+Output written on SE-Proposal.pdf (18 pages, 346057 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
+ 232 PDF objects out of 1000 (max. 8388607)
  52 named destinations out of 1000 (max. 500000)
- 95 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -159,8 +159,8 @@ $\Rightarrow$ We now account for creative destruction/turnover, R\&D spillover, 
 
 \begin{frame}{Framework - Innovation}
 	\begin{itemize}\itemsep10pt	
-	\item Law of motion: $A_{t+\Delta t} =\begin{cases}
-               A_m(1+\alpha^{s})\:,\: \lambda_{inc}\Delta t \:,\: \alpha \in (0,1)\:,\:\ s \in \{1, 2, ...\}\\
+	\item Law of motion ($A_{m+1} = A_m\gamma_{int, pot}$): $A_{t+\Delta t} =\begin{cases}
+               A_m(1-\alpha^{s})\:,\: \lambda_{inc}\Delta t \:,\: \alpha \in (0,1)\:,\:\ s \in \{1, 2, ...\}\\
                A_t\gamma_{int,abr}\:,\: \lambda_{int,abr}\Delta t\\
                A_t \:, \: \big[1 - \lambda_{inc}\Delta t; 1 - \lambda_{int,abr}\Delta t\big] 
     \end{cases}$
@@ -172,7 +172,52 @@ $\Rightarrow$ We now account for creative destruction/turnover, R\&D spillover, 
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Framework - Innovation}
+\begin{frame}{Empirical Work - Patents}
+How to discipline $\{\alpha, \gamma_{int, abr}, \gamma_{ext,abr},\gamma_{int, pot}\}$?
+	\begin{itemize}\itemsep12pt	
+		\item USPTO patent data (e.g. \# patents, \# patent citations, if it's self-citation or external...).
+		%data linked to Compustat
+	\end{itemize}
+Model (complete):
+	\begin{itemize}
+		\item Endogenous: R\&D, productivity (all parameters);
+		\item Exogenous: labor market (wages, supply), consumers (discounting), mass of entrants;
+		\item Estimated (for Patents): $\{\alpha, \gamma_{int, abr}, \gamma_{ext,abr},\gamma_{int, pot}\}$;
+		\item Calibrated (for Complete version): discounting, curvature of the R\&D cost function ($\eta$);
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Empirical Work - Patents}
+Estimation strategy:
+	\begin{itemize}\itemsep12pt	
+		\item Patent and citation distribution: invariant (at SS);
+		\item Need to discipline patent arrival and quality ladder;
+		\item Find the "decay rate" of patent quality;
+		\item Distinguish external vs. internal (patent classification or type of citation, could do robustness), abrupt vs. incremental (\# of citations);
+		\item Generational productivity step: impose the same shape and compare absolute levels ("envelope").
+		%ideally: product cycle data
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusion}
+\begin{itemize}\itemsep12pt	
+		\item Goal: estimate the R\&D part of an endogenous growth model with heterogeneous innovation;
+		\item Possibilities: 
+		\begin{itemize}\itemsep12pt
+			\item Add firm-level financials and estimate the parameters of the Partial Equilibrium (indirect inference);
+			\item Solve the SS;
+			\item Cure cancer...
+		\end{itemize}
+		\item Caveats: lots of firms don't innovate, patents do not represent innovation (nor products, ideally we would have product-level data).
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{References}
+	\nocite{*}
+	\bibliography{SE-Proposal}
+\end{frame}
+
+\begin{frame}{Appendix: Framework - Innovation}
 Outside entrepreneur:
 	\begin{itemize}\itemsep12pt	
 	%present value eq: of max (dividends, returns) discounted with r
@@ -184,7 +229,7 @@ Outside entrepreneur:
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Framework - Innovation}
+\begin{frame}{Appendix: Framework - Innovation}
 Incumbents:
 	\begin{itemize}
 	\item Value function: $rV(A_t) - \dot{V}(A_t) =$\vspace{-3mm} $$ \max_{\substack{\lambda_{inc},\:\lambda_{int, abr}\\\lambda_{ext, abr}}}\left[\begin{aligned}
@@ -216,51 +261,6 @@ Incumbents:
 	\end{itemize}    
 	\end{column}
 	\end{columns}			
-\end{frame}
-
-\begin{frame}{Empirical Work - Patents}
-How to discipline $\{\alpha, \gamma_{int, abr}, \gamma_{ext,abr},\gamma_{int, pot}\}$?
-	\begin{itemize}\itemsep12pt	
-		\item USPTO patent data (e.g. \# patents, \# patent citations, if it's self-citation or external...).
-		%data linked to Compustat
-	\end{itemize}
-Model (complete):
-	\begin{itemize}
-		\item Endogenous: R\&D, productivity (all parameters);
-		\item Exogenous: labor market (wages, supply), consumers (discounting), mass of entrants;
-		\item Estimated (for Patents): $\{\alpha, \gamma_{int, abr}, \gamma_{ext,abr},\gamma_{int, pot}\}$;
-		\item Calibrated (for Complete version): discounting, curvature of the R\&D cost function ($\eta$);
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Empirical Work - Patents}
-Estimation strategy:
-	\begin{itemize}\itemsep12pt	
-		\item Patent and citation distribution: invariant (at SS);
-		\item Need to discipline patent arrival and quality ladder;
-		\item Find the "decay rate" of patent quality;
-		\item Distinguish external vs. internal (type of citation), abrupt vs. incremental (\# of citations);
-		\item Generational productivity step: impose the same shape and compare absolute levels ("envelope").
-		%ideally: product cycle data
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Conclusion}
-\begin{itemize}\itemsep12pt	
-		\item Goal: estimate the R\&D part of an endogenous growth model with heterogeneous innovation;
-		\item Possibilities: 
-		\begin{itemize}\itemsep12pt
-			\item Add firm-level financials and estimate the parameters of the Partial Equilibrium (indirect inference);
-			\item Solve the SS;
-			\item Cure cancer...
-		\end{itemize}
-		\item Caveats: lots of firms don't innovate, patents do not represent innovation (nor products, ideally we would have product-level data).
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{References}
-	\nocite{*}
-	\bibliography{SE-Proposal}
 \end{frame}
 
 \end{document}
