@@ -159,8 +159,8 @@ $\Rightarrow$ We now account for creative destruction/turnover, R\&D spillover, 
 
 \begin{frame}{Framework - Innovation}
 	\begin{itemize}\itemsep10pt	
-	\item Law of motion: $A_{t+\Delta t} =\begin{cases}
-               A_m(1+\alpha^{s})\:,\: \lambda_{inc}\Delta t \:,\: \alpha \in (0,1)\:,\:\ s \in \{1, 2, ...\}\\
+	\item Law of motion ($A_{m+1} = A_m\gamma_{int, pot}$): $A_{t+\Delta t} =\begin{cases}
+               A_m(1-\alpha^{s})\:,\: \lambda_{inc}\Delta t \:,\: \alpha \in (0,1)\:,\:\ s \in \{1, 2, ...\}\\
                A_t\gamma_{int,abr}\:,\: \lambda_{int,abr}\Delta t\\
                A_t \:, \: \big[1 - \lambda_{inc}\Delta t; 1 - \lambda_{int,abr}\Delta t\big] 
     \end{cases}$
@@ -170,52 +170,6 @@ $\Rightarrow$ We now account for creative destruction/turnover, R\&D spillover, 
 	%average, to eliminate dependence on R&D level (cst fraction of total expenditure), levels out with returns
 	\item Cournot competition: profits $\pi_t$ scale with $\frac{A_{j,i,m}}{\sum_{j}A_{j,i,m}}$ within an industry.
 	\end{itemize}
-\end{frame}
-
-\begin{frame}{Framework - Innovation}
-Outside entrepreneur:
-	\begin{itemize}\itemsep12pt	
-	%present value eq: of max (dividends, returns) discounted with r
-	%rP = D + delP/del t: del = capital gains, D dividends
-	\item Value function: $rV_0 - \dot{V}_0 = \max\limits_{\lambda_{ext, abr}}\big[\lambda_{ext, abr}\big[E_j\big[V(A_{t, m+1})\big] - V_0\big] - v \bar{A}_{t}\lambda_{ext, abr}\big]$
- 	\item Cost: $C_E(\lambda_{ext, abr}, \bar{A}_{t}) = v \bar{A}_{t} \lambda_{ext, abr}\:$, $v$ a constant;
-	\item Free entry condition: $E_j\big[V(A_{t, m+1})\big] = v \bar{A}_{t}$
-	\item $\Rightarrow$ Each firm faces an aggregate endogenous creative destruction (CD) of rate $\tau_{CE}$ and internal competition rate $\tau_I$.
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Framework - Innovation}
-Incumbents:
-	\begin{itemize}
-	\item Value function: $rV(A_t) - \dot{V}(A_t) =$\vspace{-3mm} $$ \max_{\substack{\lambda_{inc},\:\lambda_{int, abr}\\\lambda_{ext, abr}}}\left[\begin{aligned}
-		&\sum_k^{n_{j, p}}\left[\begin{aligned}
-			&\qquad\quad\pi_t n_{j, p} - \{\xi_j\lambda_{inc}^{\eta}A_{t,m};\xi_j\bar{A}_t\lambda_{int, abr}^{\eta}\}\\
-			&\ \ + \{\lambda_{inc}\big[V(A_{t,m}^{k-}\cup A_{t+\Delta t,m}^{k}) - V(A_{t,m})\big];\\
-			& \lambda_{int, abr}\big[E_j\big[V(A_{t,m}^{k-}\cup A_{t+\Delta t,m+1}^{k}\big] - V(A_{t,m})\big]\}\\
-			&\quad\ \ - \tau_I\big[V(A_{t,m}\setminus \bar{A}_{t+\Delta t,m}^{k}) - V(A_{t,m})\big]\\
-			&\quad- \tau_{CE}\big[V(A_{t,m}\setminus\bar{A}_{t+\Delta t,m+1}^{k}) - V(A_{t,m})\big]
-		\end{aligned}\right]\\
-		&\quad+ \lambda_{ext, abr}\big[E_j\big[V(A_{t,m}^{k}\cup A_{t+\Delta t,m+1}^{k'}\big] - V(A_{t,m})\big]\\
-		&\qquad\qquad\qquad\quad- \xi_j\bar{A}_t\lambda_{int, abr}^{\eta} - \Phi\bar{A}_t
-	\end{aligned}\right]$$
-	\end{itemize}
-	\vspace{-3mm}
-	\begin{columns}
-	\begin{column}{0.5\textwidth}
-	\begin{itemize}\itemsep3pt	
-   	\item 1\textsuperscript{st}: instant returns - costs;
-	\item 2\textsuperscript{nd}, 3\textsuperscript{rd}: return from int. R\&D;
-	\item 4\textsuperscript{th}: internal competition;
-	\end{itemize}
-	\end{column}
-	\begin{column}{0.5\textwidth}
-	\begin{itemize}\itemsep3pt	
-	\item 5\textsuperscript{th}: external CE;
-	\item 6\textsuperscript{th}: return from abr. R\&D;
-	\item 7\textsuperscript{th}: Abr. R\&D and fixed costs;
-	\end{itemize}    
-	\end{column}
-	\end{columns}			
 \end{frame}
 
 \begin{frame}{Empirical Work - Patents}
@@ -253,9 +207,8 @@ Estimation strategy:
 			\item Add firm-level financials and estimate the parameters of the Partial Equilibrium (indirect inference);
 			\item Solve the SS;
 			\item Cure cancer...
-			%some abrupt steps could be blocked
 		\end{itemize}
-		%distribution of consumers, tech-savy
+		\item Caveats: lots of firms don't innovate, patents do not represent innovation (nor products, ideally we would have product-level data).
 	\end{itemize}
 \end{frame}
 
