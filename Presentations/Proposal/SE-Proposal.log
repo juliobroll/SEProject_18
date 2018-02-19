@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.13)  14 FEB 2018 10:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.13)  14 FEB 2018 14:14
 entering extended mode
 **SE-Proposal.tex
 (SE-Proposal.tex
@@ -963,7 +963,16 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \NC@list=\toks45
 \extratabsurround=\skip59
 \backup@length=\skip60
-)) (SE-Proposal.aux)
+))
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 21.
+
+(SE-Proposal.aux
+
+LaTeX Warning: Label `Innov7' multiply defined.
+
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
@@ -1282,19 +1291,45 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
 
 [13
 
-]
+]pdfTeX warning (ext4): destination with the same identifier (name{Innov7}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.202 \end{frame}
+                  <Patent_citation_distr.png, id=129, 706.64pt x 513.92pt>
+File: Patent_citation_distr.png Graphic file (type png)
+
+<use Patent_citation_distr.png>
+Package pdftex.def Info: Patent_citation_distr.png used on input line 202.
+(pdftex.def)             Requested size: 706.63828pt x 513.91873pt.
+
+<Patent_citation_distr_cut.png, id=130, 706.64pt x 513.92pt>
+File: Patent_citation_distr_cut.png Graphic file (type png)
+
+<use Patent_citation_distr_cut.png>
+Package pdftex.def Info: Patent_citation_distr_cut.png used on input line 202.
+(pdftex.def)             Requested size: 706.63828pt x 513.91873pt.
+
 Overfull \hbox (51.54921pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [14
 
-]
+ <./Patent_citation_distr.png (PNG copy)> <./Patent_citation_distr_cut.png (PNG
+ copy)>]
 Overfull \hbox (51.54921pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [15
+
+]
+Overfull \hbox (51.54921pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[16
 
 ] (SE-Proposal.bbl
 
@@ -1310,13 +1345,6 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[16
-
-]
-Overfull \hbox (51.54921pt too wide) has occurred while \output is active
- [][][][]  
- []
-
 [17
 
 ]
@@ -1327,22 +1355,33 @@ Overfull \hbox (51.54921pt too wide) has occurred while \output is active
 [18
 
 ]
+Overfull \hbox (51.54921pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[19
+
+]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 266.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 266.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 278.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 278.
  (SE-Proposal.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 266.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 266.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 278.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 278.
 Package rerunfilecheck Info: File `SE-Proposal.out' has not changed.
 (rerunfilecheck)             Checksum: 8A4411D8FDC471D5B1172A69FD03E390;46.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 18823 strings out of 493636
- 350878 string characters out of 3143738
- 434431 words of memory out of 3000000
- 21719 multiletter control sequences out of 15000+200000
+ 18838 strings out of 493636
+ 351226 string characters out of 3143738
+ 434551 words of memory out of 3000000
+ 21730 multiletter control sequences out of 15000+200000
  11646 words of font info for 42 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  56i,20n,57p,800b,614s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1360,9 +1399,9 @@ fonts/cm/cmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on SE-Proposal.pdf (18 pages, 346057 bytes).
+Output written on SE-Proposal.pdf (19 pages, 381253 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
- 103 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 241 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
