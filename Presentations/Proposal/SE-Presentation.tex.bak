@@ -115,7 +115,7 @@
 
 \begin{frame} {Estimation Results}
 	\begin{itemize}\itemsep 12pt
-		\item $\alpha = 1$, $\lambda_{int, 0}= 0.357 $, $(\lambda_{abr} + \tau = 0.355 $\\
+		\item $\alpha = 1$, $\lambda_{int, 0}= 0.357 $, $\lambda_{abr} + \tau = 0.0355 $\\
 		\begin{center}
 		\begin{figure}\centering\label{Innov5}
 		  \fbox{\resizebox{3.2in}{2.2in}{\includegraphics{MLE.png}}}
@@ -139,7 +139,32 @@
 \end{frame}
 
 \begin{frame} {Robustness}
+	\begin{itemize}\itemsep 6pt
+		\item We ran a GMM estimation: $\alpha = 1$, $\lambda_{int, 0}= 0.351 $, $\lambda_{abr} + \tau = 0.047 $
+		\begin{center}
+		\begin{figure}\centering\label{Innov5}
+		  \fbox{\resizebox{2.9in}{2.3in}{\includegraphics{GMM_MLE.png}}}
+		\end{figure}
+		\end{center}
+	\end{itemize}
+\end{frame}
+
+\begin{frame} {Robustness}
 	\begin{itemize}\itemsep 12pt
+		\item Moments (GMM):
+		\begin{table}
+		\centering
+		\begin{tabular}{l llp{1.5cm} p{0.5cm} llp{1.5cm}}
+		\toprule
+		Moment & \multicolumn{1}{c}{Data} & \multicolumn{1}{c}				{Model} \\ 
+		\midrule
+		Mean of citations & .90 & .78\\
+		Mean of first 5 seq. ratios & .90 & .78\\
+		Sum of first 2 bins ($\sim 32\%$)  & .90 & .78\\
+		R\&D Intensity & .90 & .78\\
+		\bottomrule
+		\end{tabular}
+		\end{table}
 		\item Untargeted moment: share of incremental R\&D over total:
 		\begin{table}
 		\centering
@@ -147,20 +172,50 @@
 		\toprule
 		Moment & \multicolumn{1}{c}{Data} & \multicolumn{1}{c}				{Model} \\ 
 		\midrule
-		Incremental/total & 0.90 & 0.78\\
+		Incremental/total & .90 & .78\\
 		\bottomrule
 		\end{tabular}
 		\end{table}
 	\end{itemize}
 \end{frame}
 
-\begin{frame} {Robustness}
-	\begin{itemize}\itemsep 12pt
-		\item When the cutoff for abrupt patents is adjusted, we get similar results (insert table of results).
-		\item Relax the assumption that abrupt patents are cited by every incremental patent in their technology cluster, insert results.
-		\item Importantly, across all robustness checks, $\alpha$ is always found to be equal to one.
-		\item Still, there are doubts about other theoretical assumptions.
+\begin{frame}{Robustness Results}
+	\begin{itemize} \itemsep 12pt
+		\item When the cutoff for abrupt patents is adjusted, we get similar results.
 	\end{itemize}
+	\begin{table}
+		\caption*{Robustness Specification Results}
+		\centering
+		\begin{tabular}{l llp{1.5cm} p{0.5cm} llp{1.5cm}}
+			\toprule
+			Abrupt Cutoff & \multicolumn{1}{c}{.1} & \multicolumn{1}{c}{.2} & \multicolumn{1}{c}{.05}\\ 
+			\midrule
+			$\lambda_{inc, 0}$ & .357 & .362 & .347 \\
+			$(\lambda_{abr} + \tau)$ & .0355 & .0239 & .0568\\
+			$\alpha$ & 1.0 & 1.0 & 1.0\\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Robustness Results}
+	\begin{itemize} \itemsep 12pt
+		\item We tried relaxing the assumption that abrupt patents are cited by every incremental patent in their technology cluster. Results were identical.
+	\end{itemize}
+	\begin{table}
+		\caption*{Robustness Specification Results}
+		\centering
+		\begin{tabular}{l llp{1.5cm} p{0.5cm} llp{1.5cm}}
+			\toprule
+			    & \multicolumn{1}{c}{Baseline} & \multicolumn{1}{c}{Flexible}\\ 
+			\midrule
+			$\frac{\lambda_{inc, 0}}{(\lambda_{abr} + \tau)}$ & .104 & .104 \\
+			$\alpha$ & 1.0 & 1.0\\
+			$p$ & - & 1.0 \\
+			log-likelihood & -627597 & -627598 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
 \end{frame}
 
 \begin{frame}{Conclusion}
@@ -238,26 +293,6 @@ Incumbents:
 	\end{itemize}    
 	\end{column}
 	\end{columns}			
-\end{frame}
-
-\begin{frame}{Template Column}
-\begin{table}
-\caption*{TFP Distribution Test Results (Non-parametric Wilcoxon Test)} 
-\centering
-\begin{tabular}{l llp{1.5cm} p{0.5cm} llp{1.5cm}}
-\toprule
-Distribution & \multicolumn{1}{c}{Median} & \multicolumn{1}{c}{p-value} \\ 
-\midrule
-TFP Level\\
-\; Positive profits & 3.205 & 2.241e-10\\
-\;\;\; by sic & 3.149 & 4.129e-11\\
-\;\;\; Retail & 3.485 & 1.366e-11\\
-\; Weighted by employment\\
-\;\;\; by sic & 3.145 & 1.116e-06\\
-\;\;\; Industry & 3.126 & 1.337e-04\\
-\bottomrule
-\end{tabular}
-\end{table}
 \end{frame}
 
 \end{document}
