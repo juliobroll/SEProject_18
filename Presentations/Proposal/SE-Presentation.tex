@@ -115,7 +115,7 @@
 
 \begin{frame} {Estimation Results}
 	\begin{itemize}\itemsep 12pt
-		\item $\alpha = 1$, $\lambda_{int, 0}= 0.357 $, $(\lambda_{abr} + \tau = 0.355 $\\
+		\item $\alpha = 1$, $\lambda_{int, 0}= 0.357 $, $\lambda_{abr} + \tau = 0.0355 $\\
 		\begin{center}
 		\begin{figure}\centering\label{Innov5}
 		  \fbox{\resizebox{3.2in}{2.2in}{\includegraphics{MLE.png}}}
@@ -139,7 +139,33 @@
 \end{frame}
 
 \begin{frame} {Robustness}
+	\begin{itemize}\itemsep 6pt
+		\item We ran a GMM estimation: $\alpha = 1$, $\lambda_{int, 0}= 0.351 $, $\lambda_{abr} + \tau = 0.047 $
+		\begin{center}
+		\begin{figure}\centering\label{Innov5}
+		  \fbox{\resizebox{2.9in}{2.3in}{\includegraphics{GMM_MLE.png}}}
+		\end{figure}
+		\end{center}
+	\end{itemize}
+\end{frame}
+
+\begin{frame} {Robustness - GMM}
 	\begin{itemize}\itemsep 12pt
+		\item Moments (GMM):
+		\begin{table}
+		\centering
+		\begin{tabular}{l llp{1.5cm} p{0.5cm} llp{1.5cm}}
+		\toprule
+		Moment & \multicolumn{1}{c}{Data} & \multicolumn{1}{c}				{Model} \\ 
+		\midrule
+		Mean of citations & 10.06 & 7.39\\
+		Mean of first 5 seq. ratios & 0.57 & 0.88\\
+		Sum of first 2 bins & 0.26 & 0.22\\
+		R\&D Intensity & 0.068 & 0.068\\
+		Criterion & 0.386\\
+		\bottomrule
+		\end{tabular}
+		\end{table}\vspace{-0.2cm}
 		\item Untargeted moment: share of incremental R\&D over total:
 		\begin{table}
 		\centering
@@ -147,7 +173,10 @@
 		\toprule
 		Moment & \multicolumn{1}{c}{Data} & \multicolumn{1}{c}				{Model} \\ 
 		\midrule
-		Incremental/total & 0.90 & 0.78\\
+		MLE\\
+		\;Incremental/total & .90 & .78\\
+		GMM\\
+		\;Incremental/total & .90 & .88\\
 		\bottomrule
 		\end{tabular}
 		\end{table}
