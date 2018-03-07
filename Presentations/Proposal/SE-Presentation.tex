@@ -50,8 +50,8 @@
 
 \begin{frame}{Theory Outline}
 	\begin{itemize}\itemsep12pt
-	\item Akcigit and Kerr (2016) included two different types of innovation (incremental and abrupt). Firms had no control over what type of innovation their R\&D efforts would result in.
-	\item We want to endogenize this distinction. Firms choose how much to invest in abrupt or internal innovations.
+	\item Akcigit and Kerr (2016) included two different types of innovation (incremental and external abrupt). Firms can't do internal abrupt innovation (ex: no internal new product generation) and internal R\&D has no diminishing returns.
+	\item We want to endogenize those features. Firms choose how much to invest in internal abrupt or incremental innovations.
 	\item We attempt to fit this model to patent citation distributions. The fit gives an impression of how well the model reflects reality. Also, the resulting parameter values have important theoretical interpretations.
 	\end{itemize}
 \end{frame}
@@ -71,14 +71,14 @@
 	\begin{center}
 	\begin{figure}\centering\label{Innov7}
 	\begin{minipage}[b]{0.45\linewidth}
-	  \fbox{\resizebox{2.0in}{1.8in}{\includegraphics{Patent_citation_distr.png}}}
+	  \fbox{\resizebox{2.0in}{1.8in}{\includegraphics{SameClass_hist.png}}}
 	\end{minipage}
 	\begin{minipage}[b]{0.45\linewidth}
-		\fbox{\resizebox{2.0in}{1.8in}{\includegraphics{Patent_citation_distr_cut.png}}}
+		\fbox{\resizebox{2.0in}{1.8in}{\includegraphics{SameClass_hist_ex0.png}}}
 	\end{minipage}
 	\end{figure}
 	\end{center}
-	Summary: \# obs = 3,278,174; Mean = 11.76; Std. Dev. = 20.00
+	Summary: \# obs = 189,207; Mean = 10.06; Std. Dev. = 18.43
 \end{frame}
 
 \begin{frame}{Theoretical Assumptions Regarding Patent Citations}
@@ -162,7 +162,7 @@
 		Mean of first 5 seq. ratios & 0.57 & 0.88\\
 		Sum of first 2 bins & 0.26 & 0.22\\
 		R\&D Intensity & 0.068 & 0.068\\
-		Criterion & 0.386\\
+		Criterion & & 0.386\\
 		\bottomrule
 		\end{tabular}
 		\end{table}\vspace{-0.2cm}

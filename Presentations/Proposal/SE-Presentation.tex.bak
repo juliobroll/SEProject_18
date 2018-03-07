@@ -50,8 +50,8 @@
 
 \begin{frame}{Theory Outline}
 	\begin{itemize}\itemsep12pt
-	\item Akcigit and Kerr (2016) included two different types of innovation (incremental and abrupt). Firms had no control over what type of innovation their R\&D efforts would result in.
-	\item We want to endogenize this distinction. Firms choose how much to invest in abrupt or internal innovations.
+	\item Akcigit and Kerr (2016) included two different types of innovation (incremental and external abrupt). Firms can't do internal abrupt innovation (ex: no internal new product generation) and internal R\&D has no diminishing returns.
+	\item We want to endogenize those features. Firms choose how much to invest in internal abrupt or incremental innovations.
 	\item We attempt to fit this model to patent citation distributions. The fit gives an impression of how well the model reflects reality. Also, the resulting parameter values have important theoretical interpretations.
 	\end{itemize}
 \end{frame}
@@ -149,7 +149,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame} {Robustness}
+\begin{frame} {Robustness - GMM}
 	\begin{itemize}\itemsep 12pt
 		\item Moments (GMM):
 		\begin{table}
@@ -158,13 +158,14 @@
 		\toprule
 		Moment & \multicolumn{1}{c}{Data} & \multicolumn{1}{c}				{Model} \\ 
 		\midrule
-		Mean of citations & .90 & .78\\
-		Mean of first 5 seq. ratios & .90 & .78\\
-		Sum of first 2 bins ($\sim 32\%$)  & .90 & .78\\
-		R\&D Intensity & .90 & .78\\
+		Mean of citations & 10.06 & 7.39\\
+		Mean of first 5 seq. ratios & 0.57 & 0.88\\
+		Sum of first 2 bins & 0.26 & 0.22\\
+		R\&D Intensity & 0.068 & 0.068\\
+		Criterion & & 0.386\\
 		\bottomrule
 		\end{tabular}
-		\end{table}
+		\end{table}\vspace{-0.2cm}
 		\item Untargeted moment: share of incremental R\&D over total:
 		\begin{table}
 		\centering
@@ -172,7 +173,10 @@
 		\toprule
 		Moment & \multicolumn{1}{c}{Data} & \multicolumn{1}{c}				{Model} \\ 
 		\midrule
-		Incremental/total & .90 & .78\\
+		MLE\\
+		\;Incremental/total & .90 & .78\\
+		GMM\\
+		\;Incremental/total & .90 & .88\\
 		\bottomrule
 		\end{tabular}
 		\end{table}
