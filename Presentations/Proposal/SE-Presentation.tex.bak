@@ -71,14 +71,14 @@
 	\begin{center}
 	\begin{figure}\centering\label{Innov7}
 	\begin{minipage}[b]{0.45\linewidth}
-	  \fbox{\resizebox{2.0in}{1.8in}{\includegraphics{Patent_citation_distr.png}}}
+	  \fbox{\resizebox{2.0in}{1.8in}{\includegraphics{SameClass_hist.png}}}
 	\end{minipage}
 	\begin{minipage}[b]{0.45\linewidth}
-		\fbox{\resizebox{2.0in}{1.8in}{\includegraphics{Patent_citation_distr_cut.png}}}
+		\fbox{\resizebox{2.0in}{1.8in}{\includegraphics{SameClass_hist_ex0.png}}}
 	\end{minipage}
 	\end{figure}
 	\end{center}
-	Summary: \# obs = 3,278,174; Mean = 11.76; Std. Dev. = 20.00
+	Summary: \# obs = 189,207; Mean = 10.06; Std. Dev. = 18.43
 \end{frame}
 
 \begin{frame}{Theoretical Assumptions Regarding Patent Citations}
@@ -105,12 +105,6 @@
 		\item First the parameters $\{\alpha,\frac{\lambda_{inc, 0}}{(\lambda_{abr} + \tau)} \}$ are estimated using MLE on the abrupt, same-class citation distribution.
 		\item Next the absolute values of $\lambda_{inc, 0}$ and $\lambda_{abr} + \tau$ are determined using Compustat data on R\&D intensity (= R\&D expenditure/Sales).
 	\end{itemize}
-\end{frame}
-
-\begin{frame}{Framework - Innovation}
-	\textbf{Focus:} Innovation: internal (incremental or abrupt), external, and entrants (the last two only abrupt).
-	%my contribution (internal innovation = higher markups)
-
 \end{frame}
 
 \begin{frame} {Estimation Results}
@@ -174,7 +168,7 @@
 		Moment & \multicolumn{1}{c}{Data} & \multicolumn{1}{c}				{Model} \\ 
 		\midrule
 		MLE\\
-		\;Incremental/total & .90 & .78\\
+		\;Incremental/total & .90 & .91\\
 		GMM\\
 		\;Incremental/total & .90 & .88\\
 		\bottomrule

@@ -1,0 +1,37 @@
+@ARTICLE{Aghion2001,
+title = {Competition, Imitation and Growth with Step-by-Step Innovation},
+author = {Philippe Aghion, Christopher Harris Peter Howitt and John Vickers},
+year = {2001},
+journal = {Review of Economic Studies},
+volume = {68},
+number = {3},
+pages = {467-492},
+}
+
+@techreport{Ufuk2016,
+ title = "Growth Through Heterogeneous Innovations",
+ author = "Ufuk Akcigit and William R. Kerr",
+ journal = "Journal of Political Economy",
+ type = "forthcoming",
+ year = "2016",
+}
+
+@ARTICLE{KK2004,
+title = {Innovating Firms and Aggregate Innovation},
+author = {Tor Jacob Klette and Samuel Kortum},
+year = {2004},
+journal = {Journal of Political Economy},
+volume = {112},
+number = {5},
+pages = {986-1018},
+}
+
+@techreport{NBERw19894,
+ title = "Young, Restless and Creative: Openness to Disruption and Creative Innovations",
+ author = "Daron Acemoglu and Ufuk Akcigit and Murat Alp Celik",
+ institution = "National Bureau of Economic Research",
+ type = "Working Paper",
+ series = "Working Paper Series",
+ number = "19894",
+ year = "2014",
+}
