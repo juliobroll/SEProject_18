@@ -92,8 +92,6 @@
 
 \thispagestyle{empty}
 
-\clearpage
-
 \onehalfspacing
 \setcounter{footnote}{0}
 \renewcommand{\thefootnote}{\arabic{footnote}}
@@ -103,16 +101,214 @@
 
 The JFE likes the first section to have a title. The first line of each section is indented using the \texttt{indentfirst} package.\footnote{Here's a sample footnote.} Let's put in some sections and subsections to see how they get formatted.
 
+\section{Databases and Motivating Data}
+
+This section provides an overview of the databases that were used in the estimation, as well as some motivating firm-level observations that the theoretical framework proposed in section \ref{sec:Model} will highlight.
+
+\subsection{Databases}
+
+In order to analyze the intrinsic relationship between firm dynamics and R\&D behavior through the lens of patent and citation patterns, we will make use of two databases:
+
+\begin{itemize}
+	\item \textbf{NBER-USPTO Patent Database:} Data on patents and citations come from the massive effort undertaken by Hall et al. (2001) in order to count citations of patents granted between 1976-2006. The database has over 3 million patents from the United States Patent and Trademark Office (USPTO), including assignee identification, patent class and citation data. We will limit ourselves to patents granted to US assignees. Moreover, regarding citations, we will use the diffusive correction coefficients from Hall et al. (2001) to adjust for the cutoff effect: as patent applications get closer to the 2006 cutoff, the citation count is, naturally, lower, simply because it did not have enough time to receive citations. The data can also be dynamically matched to the Compustat database;
+	\item \textbf{Compustat North American Fundamentals:} Compustat is a database of financial, statistical and market information on active and inactive companies. The database has information over the period 1950-2015 on the US economy. Since privately held firms do not have to disclose financial statements, the database has only publicly-listed firms. However, because those firms tend to be bigger than private ones, they have a significant weight in the whole economy. The main variables are SIC code, employment, net income, net sales, cost of goods sold (COGS), R\&D expenditure, plant, property and equipment and total assets. When price deflators are needed, we use the NIPA tables. Moreover, we remove from the data heavily regulated sectors (e.g. utilities), financial firms and observations in which a firm has made acquisitions larger than 5\% of the value of their total assets.
+\end{itemize}
+
+\subsection{Empirical Observations}
+
+The idea of analyzing the intertemporal productivity choice that firms face when deciding whether to continue on the diminishing returns path of incremental innovations or to successfully innovate a product line abruptly, at the expense of a temporary productivity slump, comes from two observations in the data.
+
+First, one should note that, since the 1970s (but more strongly in the 1980s), there has been a surge in the number of what we will denote as \textit{"sprinter firms"}: firms that report negative profits, but grow faster than their entire sector of activity (e.g. Amazon in the early 2000s). Figure \ref{fig:CBFirms} highlights the increasing share of sprinter firms in the US economy. This fact is robust if, instead, we weight each company by their employment share. Impressive in itself, this observation is doubly interesting by the fact that those firms invest more in R\&D, when comparing median values, than the entire economy. Figure \ref{fig:RD_spending_rat} shows the evolution of this ratio for the US economy. This observation is robust if we restrict comparisons by SIC Code.
+
+\begin{table}[!htbp] \centering 
+  \caption{Regression Results} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{Labor Productivity} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)}\\ 
+\hline \\[-1.8ex] 
+ Dummy.t & 0.005 & 0.005 & 0.005 \\ 
+  & (0.011) & (0.012) & (0.012) \\ 
+  Dummy.t-1 & -0.012 & -0.013 & -0.013 \\ 
+  & (0.012) & (0.012) & (0.012) \\ 
+  Dummy.t-2 & 0.025^{*} & 0.022 & 0.022 \\ 
+  & (0.012) & (0.012) & (0.012) \\ 
+  Dummy.t-3 & 0.024^{*} & 0.021 & 0.020 \\ 
+  & (0.012) & (0.012) & (0.012) \\ 
+  Dummy.t-4 & -0.025^{*} & -0.030^{*} & -0.031^{*} \\ 
+  & (0.012) & (0.012) & (0.012) \\ 
+  Dummy.t-5 &  & 0.028^{*} & 0.026^{*} \\ 
+  &  & (0.012) & (0.012) \\ 
+  Dummy.t-6 &  &  & 0.013 \\ 
+  &  &  & (0.013) \\ 
+ \hline \\[-1.8ex] 
+Firm fixed effects & Yes & Yes & Yes \\ 
+Year fixed effects & Yes & Yes & Yes \\ 
+Observations & \multicolumn{1}{c}{38,035} & \multicolumn{1}{c}{37,549} & \multicolumn{1}{c}{37,017} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.0004} & \multicolumn{1}{c}{0.001} & \multicolumn{1}{c}{0.001} \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\ 
+\end{tabular} 
+\end{table} 
+
 \section{The Model} \label{sec:Model}
 
-The baseline theoretical framework used here is similar to the one employed in Ackigit and Kerr (2016) and Acemoglu et al. (
+The baseline theoretical framework used here is similar to the one employed in Ackigit and Kerr (2016) and Acemoglu et al. (2014). A firm is defined as a portfolio of product lines $\mathscr{F}_j$ as in Klette and Kortum (2004) and can engage in both internal and external R\&D. Differently from the previous literature, the goal here is to highlight each firms' choice of investing in incremental R\&D, subject to diminishing returns, and internal abrupt innovation, which causes a temporary productivity slump, along the quality ladder of a product. As a simplification, R\&D does not scale with firm size.
+
+Because the estimation concerns only the innovation effort of firms, we will limit ourselves to the partial equilibrium.
+
+\subsection{Production}
+
+We consider a continuous-time setup where preferences are determined over a unique final good $Y(t)$, produced by labor and a continuum of intermediate goods $j \in [0,1]$ with the CES production technology defined by:
+
+\begin{equation} \label{eq:Prod}
+Y(t) =  \frac{L^{\beta}}{1 - \beta}\int_0^1 q_j^{\beta}(t)k_j^{1-\beta}(t)dj
+\end{equation}
+
+\noindent where $q_j(t)$ is the productivity of product $j$, $k_j$ its quantity and $L$ is the production labor supply, which is supplied inelastically. 
+
+Since each product line owned by a firm is independent of the others, prices are set in order to maximize profits in each line. Each patent allows for monopoly pricing in each product line by the leading-edge firm, which faces a constant marginal cost $\zeta$. As a simplification, when there is an abrupt innovation, we will assume that the production of the old generation variety is shut-down, being replaced by the new version, even in the presence of a productivity decline.
+
+As such, according to~\eqref{eq:Prod}, firms face, for each $j$, an iso-elastic inverse demand defined as (time arguments were suppressed for clarity):
+
+\begin{equation} \label{eq:Price}
+p_j =  L^{\beta}q_j^{\beta}k_j^{-\beta}
+\end{equation}
+
+The profit-maximization problem, then, can be written as:
+
+\begin{equation} \label{eq:PiMax}
+\Pi(q_j) = \max\limits_{k_j \geq 0}\Big\{L^{\beta}q_j^{\beta}k_j^{1-\beta} - \zeta k_j\Big\}
+\end{equation}
+
+The first-order condition for~\ref{eq:PiMax} yields, for each intermediate good $j$:
+
+\begin{equation} \label{eq:FOC}
+p_j = \frac{\zeta}{1-\beta}\; \texttt{and}\;k_j = \Big[\frac{1-\beta}{\zeta}\Big]^{\frac{1}{\beta}}Lq_j
+\end{equation}
+
+Hence, equilibrium profits for each product line are linear in quality $q_j$:
+
+\begin{equation} \label{eq:EqProfit}
+\Pi(q_j) = \beta\Big[\frac{1-\beta}{\zeta}\Big]^{\frac{1-\beta}{\beta}}Lq_j \equiv \pi q_j
+\end{equation}
+
+\subsection{Research and Development Dynamics}
+
+Firms have profit-incentives to innovate in their own product lines through \textit{internal innovation}, thus increasing productivity. Moreover, firms have incentives to do abrupt innovation on other the products of other firms, "stealing" the product line of another firm by developing a new product generation through \textit{external innovation}. For internal R\&D, firms can invest in \textit{incremental innovation}, thus increasing, with diminishing returns, the productivity of the current product generation, and in \textit{internal abrupt innovation}, "killing" the current generation and resetting the cycle for returns of incremental innovation (meaning a new generation can achieve higher productivity levels) at the expense of reducing its current productivity. Here, differently from other models, the process of creative destruction is limited to the development of a new product generation over the current version belonging to another firm. The entire process is determined endogenously. 
+
+This R\&D dynamic is summarized in figure \ref{fig:QLadder} and will now be described in detail.\\
+
+\textbf{Incremental R\&D:} Firms can improve their current product $j \in \mathscr{F}_j$, within their current technological generation (e.g. from an iPhone 3G to an iPhone 3GS), by investing $C_{inc,k}$ units of the final good at each innovative step $k \geq 0$. This cost is defined as:
+
+\begin{equation} \label{eq:Cinc}
+C_{inc,k}(\lambda_{inc,k},q_j) = \xi_{inc}\lambda_{inc,k}^{\psi_{inc}}q_j
+\end{equation}
+
+\noindent where $\lambda_{inc,k} \ge 0$ is the desired incremental innovation instantaneous Poisson flow rate for each level $k$, $\xi_{inc}$ is the incremental R\&D scale and $\psi_{inc}$ is the elasticity of innovation effort to R\&D expenditures. When successful, the productivity improves such that $q(t + \Delta t) = q(t)(1 + \sigma\alpha^{k})$, where $\sigma > 0$ is a constant multiplicative step-size, $\alpha \in [0, 1]$ is the decay rate of doing sequential incremental steps.\\
+
+\textbf{Internal Abrupt R\&D:} Firms can also improve a product by making a generational step (e.g. from an iPhone 3GS to the iPhone 4). In that sense, they spend $C_{int, abr}$ units of the final good, defined as:
+
+\begin{equation} \label{eq:Cintabr}
+C_{int,abr}(\lambda_{int,abr},q_j) = \xi_{abr}\lambda_{int,abr}^{\psi_{abr}}q_j
+\end{equation}
+
+\noindent where $\lambda_{int,abr} \ge 0$ is the internal abrupt innovation instantaneous Poisson flow rate, $\xi_{abr}$ is the abrupt R\&D scale and $\psi_{abr}$ is the elasticity of innovation effort to R\&D expenditures. When successful, the productivity improves such that $q(t + \Delta t) = q(t)\gamma_{int,abr}$, where $\gamma_{int,abr} \in [0,1]$ is the productivity slump required for a generational evolution.\\
+
+\textbf{External R\&D:} Finally, firms can engage in creative destruction by innovating (abruptly) on the product line of other firms. This is done by investing $C_{ext}$, defined as:
+
+\begin{equation} \label{eq:Cext}
+C_{ext}(\lambda_{ext},\bar{q}_j) = \xi_{abr}\lambda_{ext}^{\psi_{abr}}\bar{q}_j
+\end{equation}
+
+\noindent where $\lambda_{ext} \ge 0$ is the instantaneous Poisson flow rate for external R\&D and $\bar{q}_j$ is the average productivity in the whole economy. Similar to the internal innovation effort, the subsequent productivity is given by $q(t + \Delta t) = q(t)\gamma_{ext}$, $\gamma_{ext} \in [0,1]$. In this case, the product line joins the portfolio of the innovating firm and the firm losing its product may exit the market if its portfolio is empty.\\
+
+\textbf{Patent and Citation Behavior:} The proposed innovation dynamic assumes a structure of patent and citation arrival. Firms can move vertically and horizontally in the quality ladder of each product by creating patents. Each generation of a product is owned by a single firm, who owns the original abrupt patent and can innovate over it incrementally. Latter incremental patents are assumed to cite all previous patents within a generation. Finally, the cycle is rewound when that same firm makes an internal abrupt innovation or when other firms or entrants innovate abruptly on that product line. This pattern implies that abrupt patents receive more citations.
+
+\subsection{Entrants}
+
+Similar to Klette and Kortum (2004), a mass of entrants engage in R\&D in order to enter the economy by successfully innovating abruptly on a product line. Entrant R\&D cost $C_e$ is defined as:
+
+\begin{equation} \label{eq:Ce}
+C_e(\lambda_e,\bar{q}_j) = \nu\lambda_e\bar{q}_j
+\end{equation}
+
+\noindent where $\lambda_e \ge 0$ is the innovation flow rate and $\nu \ge 0$ is a scale parameter. As such, the value $V_0$ of being an entrepreneur can be written as the expectation of successfully innovating:
+
+\begin{equation} \label{eq:V0}
+rV_0 - \dot{V} = \max\limits_{\lambda_e}\big\{\lambda_e\big[E_jV(\bar{q}_j\gamma_{ext}) - V_0\big] - C_e\big\}
+\end{equation}
+
+\noindent where $r$ is the interest rate, $V(q_j)$ is the value of owning one product with productivity $q_j$ and $\dot{V}$ is the partial derivative with respect to time.
+
+Free-entry condition requires that:
+
+\begin{equation} \label{eq:Free-entry}
+E_jV(\bar{q}_j\gamma_{ext}) = \nu\bar{q}_j
+\end{equation}
+
+Hence, all product lines are subject to an aggregate rate of creative destruction $\tau$ from all $n_f$ firms in the economy and the outside entrants, where:
+
+\begin{equation} \label{eq:Tau}
+\tau = n_f\lambda_{ext} + \lambda_e
+\end{equation}
+
+\subsection{Incumbents}
+
+The incumbents value function determines the amount of R\&D effort. Given a product portfolio with $n_p$ products, a vector of productivities $\overrightarrow{q}_f \equiv \{q_{f,j_1}, q_{f,j_2}, ..., q_{f,j_{n_p}}\}$ and a vector of the number of incremental steps $\overrightarrow{k}_f \equiv \{k_{f,j_1}, k_{f,j_2}, ..., k_{f,j_{n_p}}\}$, a firm chooses each innovation flow rate so as to maximize:
+
+$rV(\{q_t,k\}) - \dot{V}(\{q_t,k\}) =$
+\begin{equation} \label{eq:Vincumb}
+\max_{\substack{\lambda_{inc,k}\\\lambda_{int, abr}\\\lambda_{ext}}}\left[\begin{aligned}
+		&\sum_p^{n_p}\left[\begin{aligned}
+			&\qquad\qquad\quad\pi n_{p} - \xi_{inc}\lambda_{inc,k}^{\psi_{inc}}q_t - \xi_{abr}\bar{q}_t\lambda_{int,abr}^{\psi_{abr}}\\
+			& + \lambda_{inc,k}\big[V(\{q_t^{p-}, k^{p-}\}\cup \{q_{t+\Delta t, j_p}, k_{j_p} + 1\}) - V(q_{t},k)\big]\\
+			&+ \lambda_{int, abr}\big[E_j\big[V(\{q_t^{p-},k^{p-}\}\cup \{q_{t+\Delta t,j_p}, 0\}\big] - V(q_{t},k)\big]\\
+			&\qquad\quad \ \ - \tau\big[V(\{q_t,k\}\setminus \{q_t^p,k^p\}) - V(q_t,k)\big]\\
+		\end{aligned}\right]\\
+		&+ \lambda_{ext, abr}\big[E_j\big[V(\{q_t,k\}\cup \{q_{t+\Delta t}^{p'},k^{p'}\}\big] - V(\{q_t,k\})\big] - \xi_{abr}\bar{q}_t\lambda_{ext}^{\psi_{abr}}
+	\end{aligned}\right] 
+\end{equation}
+
+The right-hand side of the value function is quite intuitive: the first four lines are common to all product lines owned by a firm. The first line represents the instant returns minus the R\&D costs of doing incremental and abrupt internal innovation. The second line has the expected return flows from doing incremental innovation on product $p$, whose productivity changes with the single incremental jump. Similarly, the third line describes the return flows of doing internal abrupt R\&D. In this case, the productivity change comes with a reset of the number of incremental steps. Lastly for each product line, the forth line represents the effect of creative destruction by another firm, when the incumbent loses one of its products. Equivalently, the last line is due to the fact that firms can also engage in external abrupt innovation themselves, in which case it adds one product to its portfolio by investing in external R\&D.
+
+Since the focus of this paper is on the estimation of the citation distribution and the innovation-related parameters, we will refrain from proposing a solution to the value function here.
+
+\subsection{Stationary Distributions of Products and Citations}
+
+At the steady state, the economy has a stationary distribution of products at each incremental step. Since abrupt patents are cited by all the subsequent incremental ones within each generation of a product, the citation distribution of abrupt patents and the stationary distribution of products follow the same pattern. We will describe the former now.
+
+Denote $\eta_k$ the share of abrupt patents that have received $k$ citations (which is equivalent of having $k$ incremental arrivals). For each $k$ in all product lines (which we normalize to measure 1), at the steady state, we must have outflows balancing inflows, i.e.:
+
+$$\begin{array}{llll}
+\textit{Level} & \textit{Inflow} &  & \textit{Outflow}\\
+k = 0 & \tau + \lambda_{int,abr} & = & \eta_0(\lambda_{inc,0} + \lambda_{int,abr} + \tau)\\
+k \geq 1 & \eta_{k-1}\lambda_{inc,k-1} & = & \eta_n(\lambda_{inc,k} + \lambda_{int,abr} + \tau)\\
+\end{array}$$
+
+For the first citation level, inflows come from the aggregate arrival of internal abrupt patents from all steps and from external creative destruction, while outflows originate from products at level 0 that get an incremental innovation (i.e. a new citation), from internal abrupt innovation of product lines with no citation and from creative destruction. For all the other citation levels $k$, inflows come from successful incremental R\&D from the previous level $k-1$, while outflows are either a result of patents with $k$ citations receiving a citation from a subsequent incremental development, from abrupt internal innovation at that level or from outside creative destruction.
+
+Solving for all levels gives:
+
+\begin{equation} \label{eq:eta0}
+\eta_0 = \Big[\frac{\lambda_{int,abr} + \tau}{\lambda_{inc,0} +\lambda_{int,abr} + \tau}\Big]
+\end{equation}
+
+\begin{equation} \label{eq:etak}
+\eta_k = \eta_{k-1}\Big[\frac{\lambda_{inc,k-1}}{\lambda_{inc,k} +\lambda_{int,abr} + \tau}\Big]
+\end{equation}
 
 \subsection{A Subsection}
 
 In order to confirm the results from the maximum likelihood estimation, a second estimation routine was created using the Generalized Method of Moments. The adopted strategy was to estimate $\hat{\theta}_{GMM} = (\tau + \lambda_{int,abr}, \lambda_{inc,0}, \alpha)$ by solving equation~\eqref{eq:GMM} with the actual and the estimated moments ($m^d(x)$ and $m^e(x|\theta_{GMM})$, respectively, where $x$ is the real data).
 
 \begin{equation} \label{eq:GMM}
-\mathscr{L}(\theta_{GMM}) =  min_{\theta_{GMM}}e(x|\theta_{GMM})^TWe(x|\theta_{GMM})
+\mathscr{L}(\theta_{GMM}) =  \min\limits_{\theta_{GMM}}e(x|\theta_{GMM})^TWe(x|\theta_{GMM})
 \end{equation}
 
 \noindent where $W$ is the weighting-matrix ($W = I$ here) and $e(x|\theta_{GMM})$ is the moment error function, defined as
@@ -174,38 +370,6 @@ To test for robustness on both GMM and MLE, we have also checked the predictions
 	\end{tabular}
 \end{table}
 
-Nothing very odd about the formatting of section and subsection headings. Here's a reference to Section~\ref{sec:subsec} or~\ref{sec:subsub}. Let's also add some parenthetical citations (see~\citealp{Stanton:95,CarpenterStantonWallace:12}; and \citealp{Campbell:03}). 
-
-To justify adding a subsection here, from now on, we'll assume
-\begin{condition}\label{cond:rates}
-$0 <  \hat{\mu} < \gamma\sigma^2$.
-\vspace{3mm}
-\end{condition}
-This condition might be useful if there was a model. 
-
-\subsection{Another Subsection, With a Figure}
-\label{sec:subsec}
-
-Figures get put at the end, with a note marking where they should go in the text, like this:
-
-\bigskip
-\centerline{\bf [Insert Figure~\ref{fig:0} near here]}
-\bigskip
-
-\subsubsection{A Subsubsection with a Proposition}
-\label{sec:subsub}
-
-Let's put a proposition here.
-\begin{proposition} \label{prop:3}
-If Condition~\ref{cond:rates} is satisfied,  a solution to the central
-planner's problem, $V(B,D,t) \in C^2\left( {\mathbb R}_{+}^2 \times
-  [0,T] \right)$, with control $a:[0,1]\times[0,T]\rightarrow [-\lambda,\lambda]$
- if  $\gamma>1$ is
-\begin{equation} \label{eq:valuea}
-V(B,D,t) =  - \frac{(B+D)^{1-\gamma}}{1-\gamma}   w\left(\frac{B}{B+D},t\right).
-\end{equation}
-\end{proposition}
-
 % Bibliography.
 
 \bibliographystyle{jfe}
@@ -221,8 +385,23 @@ V(B,D,t) =  - \frac{(B+D)^{1-\gamma}}{1-\gamma}   w\left(\frac{B}{B+D},t\right).
 Here's an appendix with an equation. Note that equation numbering continues where it left off in the main body and that the JFE wants the word ``Appendix'' to appear before the letter in the appendix title. This is all handled in \texttt{jfe.sty}.
 
 \begin{figure}[htb]\centering \captionsetup{width=5.8in}
-    \fbox{\resizebox{4.0in}{2.7in}{\includegraphics{GMM_MLE.png}}}
-    \caption{\label{GMM_MLE}\textit{Citation distribution for same-class abrupt patents and estimation results for MLE and GMM}}
+    \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{CBFirms.jpeg}}}
+    \caption{\label{fig:CBFirms}\textit{Evolution of the ratio of sprinter firms in the economy.}}
+\end{figure}
+
+\begin{figure}[htb]\centering \captionsetup{width=5.8in}
+    \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{RD_spending_ratio.jpeg}}}
+    \caption{\label{fig:RD_spending_rat}\textit{Evolution of the ratio of median R\&D spending between sprinter firms and the whole economy.}}
+\end{figure}
+
+\begin{figure}[htb]\centering \captionsetup{width=5.8in}
+    \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{QLadder.png}}}
+    \caption{\label{fig:QLadder}\textit{Example of sequential innovations in a given product line, for different generations.}}
+\end{figure}
+
+\begin{figure}[htb]\centering \captionsetup{width=5.8in}
+    \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{GMM_MLE.png}}}
+    \caption{\label{fig:GMM_MLE}\textit{Citation distribution for same-class abrupt patents and estimation results for MLE and GMM.}}
 \end{figure}
 
 \end{document}
