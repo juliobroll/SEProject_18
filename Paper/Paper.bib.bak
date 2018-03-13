@@ -8,6 +8,25 @@ number = {3},
 pages = {467-492},
 }
 
+@TechReport{Hall2001,
+  author={Bronwyn H. Hall and Adam B. Jaffe and Manuel Trajtenberg},
+  title={{The NBER Patent Citation Data File: Lessons, Insights and Methodological Tools}},
+  year=2001,
+  institution={National Bureau of Economic Research, Inc},
+  type={NBER Working Papers},
+  number={8498},
+}
+
+@ARTICLE{Griliches1990,
+title = {Patent Statistics as Economic Indicators: A Survey},
+author = {Griliches, Zvi},
+year = {1990},
+journal = {Journal of Economic Literature},
+volume = {28},
+number = {4},
+pages = {1661-1707},
+}
+
 @techreport{Ufuk2016,
  title = "Growth Through Heterogeneous Innovations",
  author = "Ufuk Akcigit and William R. Kerr",
@@ -26,7 +45,7 @@ number = {5},
 pages = {986-1018},
 }
 
-@techreport{NBERw19894,
+@techreport{Acemoglu2014,
  title = "Young, Restless and Creative: Openness to Disruption and Creative Innovations",
  author = "Daron Acemoglu and Ufuk Akcigit and Murat Alp Celik",
  institution = "National Bureau of Economic Research",
