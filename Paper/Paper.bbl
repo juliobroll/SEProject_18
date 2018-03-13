@@ -1,0 +1,35 @@
+\ifx\undefined\bysame
+\newcommand{\bysame}{\leavevmode\hbox to\leftmargin{\hrulefill\,\,}}
+\fi
+\begin{thebibliography}{xx}
+
+\harvarditem[Acemoglu et al.]{Acemoglu, Akcigit and Celik}{2014}{Acemoglu2014}
+{\bf Acemoglu, Daron, Ufuk Akcigit, and Murat~Alp Celik}, ``Young, Restless and
+  Creative: Openness to Disruption and Creative Innovations,'' Working Paper
+  19894, National Bureau of Economic Research 2014.
+
+\harvarditem[Philippe~Aghion and Vickers]{Philippe~Aghion and
+  Vickers}{2001}{Aghion2001}
+{\bf Aghion, Christopher Harris Peter~Howitt~Philippe and John Vickers},
+  ``Competition, Imitation and Growth with Step-by-Step Innovation,'' {\it
+  Review of Economic Studies}, 2001, {\it 68} (3), 467--492.
+
+\harvarditem[Akcigit and Kerr]{Akcigit and Kerr}{2016}{Ufuk2016}
+{\bf Akcigit, Ufuk and William~R. Kerr}, ``Growth Through Heterogeneous
+  Innovations,'' forthcoming 2016.
+
+\harvarditem[Griliches]{Griliches}{1990}{Griliches1990}
+{\bf Griliches, Zvi}, ``Patent Statistics as Economic Indicators: A Survey,''
+  {\it Journal of Economic Literature}, 1990, {\it 28} (4), 1661--1707.
+
+\harvarditem[Hall et al.]{Hall, Jaffe and Trajtenberg}{2001}{Hall2001}
+{\bf Hall, Bronwyn~H., Adam~B. Jaffe, and Manuel Trajtenberg}, ``{The NBER
+  Patent Citation Data File: Lessons, Insights and Methodological Tools},''
+  NBER Working Papers 8498, National Bureau of Economic Research, Inc 2001.
+
+\harvarditem[Klette and Kortum]{Klette and Kortum}{2004}{KK2004}
+{\bf Klette, Tor~Jacob and Samuel Kortum}, ``Innovating Firms and Aggregate
+  Innovation,'' {\it Journal of Political Economy}, 2004, {\it 112} (5),
+  986--1018.
+
+\end{thebibliography}

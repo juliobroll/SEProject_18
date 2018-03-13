@@ -99,9 +99,17 @@
 
 \section{Introduction}
 
-The JFE likes the first section to have a title. The first line of each section is indented using the \texttt{indentfirst} package.\footnote{Here's a sample footnote.} Let's put in some sections and subsections to see how they get formatted.
+This paper investigates the interpemporal productivity choice that a firm has to make when deciding whether to make incremental or abrupt product innovations. As firms pick innovation paths, they can either innovate their products incrementally, though there is naturally an exhaustion of incremental possibilities that can be added, or abruptly. In the latter case, innovation brings a radical change to production, which take a productivity toll. However, the invention of a new product (or a new generation of the product) opens a whole horizon for new incremental innovations. Hence, firms have different R\&D incentives: right after a radical innovation, firms want to benefit from all the possible new incremental innovation steps that they can make. As they exhaust the realm of incremental ideas, firms turn to abrupt innovation to restart the cycle.
 
-\section{Databases and Motivating Data}
+This firm behavior prediction has important aggregate implications. At any given point, some share of firms will be trading current productivity for future one as they choose to engage in abrupt R\&D. However, this productivity decline, which should impact the aggregate measure of TFP in the economy, is not related with sluggish efficiency. It is simply the result of an arbitrage decision that would, ideally, pay off in the future.
+
+This paper is linked to the literature on endogenous growth, where creative destruction by firms is the main driver of growth. In this sense, firms engage in R\&D both to increase their mark-up and to steal the products of other firms. Although the recent literature on this subject has taken into account the idea of R\&D heterogeneity (Akcigit and Kerr, 2016) and diminishing returns of incremental innovation (Acemoglu, Akcigit and Celik, 2014), innovation is always good for productivity, even in the short-term. Moreover, since the focus of Acemoglu et al. (2014) was in the relationship between management and R\&D, they do not endogenize the innovation decision. Additionally, to our knowledge, there is no model that accounts for the possibility of firms innovating abruptly internally, which ignores the temporal dimension of the decision to innovate.
+
+On the empirical side, this paper joins the effort of using patent and patent citation data to discipline productivity in an endogenous framework (e.g. Griliches, 1990). The idea behind this identification is that a patent with more citations has a bigger impact on productivity. Using the rich citation distribution available from the empirical work of Hall, Jaffe and Trajtenberg (2001), we discipline our parameters by imposing patent and citation patterns and quantify the impact of each possible innovation path. 
+
+The paper is structured as follows: section \ref{sec:Data} specifies the databases that were used to estimate the parameters and presents some motivating stylized facts. Section \ref{sec:Model} lays down the theoretical framework used to highlight the R\&D decisions of firms. Section \ref{sec:Estimation} describes the estimation procedure. Section \ref{sec:Results} presents the estimation results and \ref{sec:Conclusion} concludes.
+
+\section{Databases and Motivating Data}\label{sec:Data}
 
 This section provides an overview of the databases that were used in the estimation, as well as some motivating firm-level observations that the theoretical framework proposed in section \ref{sec:Model} will highlight.
 
@@ -120,41 +128,11 @@ The idea of analyzing the intertemporal productivity choice that firms face when
 
 First, one should note that, since the 1970s (but more strongly in the 1980s), there has been a surge in the number of what we will denote as \textit{"sprinter firms"}: firms that report negative profits, but grow faster than their entire sector of activity (e.g. Amazon in the early 2000s). Figure \ref{fig:CBFirms} highlights the increasing share of sprinter firms in the US economy. This fact is robust if, instead, we weight each company by their employment share. Impressive in itself, this observation is doubly interesting by the fact that those firms invest more in R\&D, when comparing median values, than the entire economy. Figure \ref{fig:RD_spending_rat} shows the evolution of this ratio for the US economy. This observation is robust if we restrict comparisons by SIC Code.
 
-\begin{table}[!htbp] \centering 
-  \caption{Regression Results} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-4} 
-\\[-1.8ex] & \multicolumn{3}{c}{Labor Productivity} \\ 
-\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)}\\ 
-\hline \\[-1.8ex] 
- Dummy.t & 0.005 & 0.005 & 0.005 \\ 
-  & (0.011) & (0.012) & (0.012) \\ 
-  Dummy.t-1 & -0.012 & -0.013 & -0.013 \\ 
-  & (0.012) & (0.012) & (0.012) \\ 
-  Dummy.t-2 & 0.025^{*} & 0.022 & 0.022 \\ 
-  & (0.012) & (0.012) & (0.012) \\ 
-  Dummy.t-3 & 0.024^{*} & 0.021 & 0.020 \\ 
-  & (0.012) & (0.012) & (0.012) \\ 
-  Dummy.t-4 & -0.025^{*} & -0.030^{*} & -0.031^{*} \\ 
-  & (0.012) & (0.012) & (0.012) \\ 
-  Dummy.t-5 &  & 0.028^{*} & 0.026^{*} \\ 
-  &  & (0.012) & (0.012) \\ 
-  Dummy.t-6 &  &  & 0.013 \\ 
-  &  &  & (0.013) \\ 
- \hline \\[-1.8ex] 
-Firm fixed effects & Yes & Yes & Yes \\ 
-Year fixed effects & Yes & Yes & Yes \\ 
-Observations & \multicolumn{1}{c}{38,035} & \multicolumn{1}{c}{37,549} & \multicolumn{1}{c}{37,017} \\ 
-R$^{2}$ & \multicolumn{1}{c}{0.0004} & \multicolumn{1}{c}{0.001} & \multicolumn{1}{c}{0.001} \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\ 
-\end{tabular} 
-\end{table} 
+If we assume that firms, at some point, should start making profits, this means that a significant share of firms are entering in a temporary R\&D "sprint race": they increase their innovation effort in order to succeed. The theoretical framework behind this rationale is that, after making an abrupt innovation, a firm is impacted by a productivity decline. However, since a radical innovation opens a new production potential, returns to R\&D are bigger, hence companies have an incentive to make R\&D efforts.
+
+Secondly, the productivity slump from abrupt innovation is observed at the firm level. Table \ref{tab:Pat_reg} shows a persistent and significant labor productivity decline 4 years after a firm files an abrupt patent application (taken, here, as the top 10\% of patents in number of citations). This is done by regressing firm-level labor productivity growth with lagged dummy variables that capture the (lagged) arrival of an abrupt patent. We also control for firm-level fixed effects and yearly fixed effects that could be related with macro technological shifts. This goes in line with the idea that those type of patents require a major shift in production (e.g. labor, machines), imposing a productivity toll since firms have to rebuild their accumulated knowledge in the new production.
+
+In section \ref{sec:Model}, we propose a model that will highlight the R\&D pattern observed in both of these stylized facts.
 
 \section{The Model} \label{sec:Model}
 
@@ -226,7 +204,7 @@ C_{int,abr}(\lambda_{int,abr},q_j) = \xi_{abr}\lambda_{int,abr}^{\psi_{abr}}q_j
 C_{ext}(\lambda_{ext},\bar{q}_j) = \xi_{abr}\lambda_{ext}^{\psi_{abr}}\bar{q}_j
 \end{equation}
 
-\noindent where $\lambda_{ext} \ge 0$ is the instantaneous Poisson flow rate for external R\&D and $\bar{q}_j$ is the average productivity in the whole economy. Similar to the internal innovation effort, the subsequent productivity is given by $q(t + \Delta t) = q(t)\gamma_{ext}$, $\gamma_{ext} \in [0,1]$. In this case, the product line joins the portfolio of the innovating firm and the firm losing its product may exit the market if its portfolio is empty.\\
+\noindent where $\lambda_{ext} \ge 0$ is the instantaneous Poisson flow rate for external R\&D and $\bar{q}_j$ is the average productivity in the whole economy. Similar to the internal innovation effort, the subsequent productivity is given by $q(t + \Delta t) = \bar{q}(t)\gamma_{ext}$, $\gamma_{ext} \in [0,1]$. In this case, the product line joins the portfolio of the innovating firm and the firm losing its product may exit the market if its portfolio is empty.\\
 
 \textbf{Patent and Citation Behavior:} The proposed innovation dynamic assumes a structure of patent and citation arrival. Firms can move vertically and horizontally in the quality ladder of each product by creating patents. Each generation of a product is owned by a single firm, who owns the original abrupt patent and can innovate over it incrementally. Latter incremental patents are assumed to cite all previous patents within a generation. Finally, the cycle is rewound when that same firm makes an internal abrupt innovation or when other firms or entrants innovate abruptly on that product line. This pattern implies that abrupt patents receive more citations.
 
@@ -241,7 +219,7 @@ C_e(\lambda_e,\bar{q}_j) = \nu\lambda_e\bar{q}_j
 \noindent where $\lambda_e \ge 0$ is the innovation flow rate and $\nu \ge 0$ is a scale parameter. As such, the value $V_0$ of being an entrepreneur can be written as the expectation of successfully innovating:
 
 \begin{equation} \label{eq:V0}
-rV_0 - \dot{V} = \max\limits_{\lambda_e}\big\{\lambda_e\big[E_jV(\bar{q}_j\gamma_{ext}) - V_0\big] - C_e\big\}
+rV_0 - \dot{V} = \max\limits_{\lambda_e}\big\{\lambda_e\big[E_jV(\{\bar{q}_j\gamma_{ext},0\}) - V_0\big] - C_e\big\}
 \end{equation}
 
 \noindent where $r$ is the interest rate, $V(q_j)$ is the value of owning one product with productivity $q_j$ and $\dot{V}$ is the partial derivative with respect to time.
@@ -249,7 +227,7 @@ rV_0 - \dot{V} = \max\limits_{\lambda_e}\big\{\lambda_e\big[E_jV(\bar{q}_j\gamma
 Free-entry condition requires that:
 
 \begin{equation} \label{eq:Free-entry}
-E_jV(\bar{q}_j\gamma_{ext}) = \nu\bar{q}_j
+E_jV(\{\bar{q}_j\gamma_{ext},0\}) = \nu\bar{q}_j
 \end{equation}
 
 Hence, all product lines are subject to an aggregate rate of creative destruction $\tau$ from all $n_f$ firms in the economy and the outside entrants, where:
@@ -271,7 +249,7 @@ $rV(\{q_t,k\}) - \dot{V}(\{q_t,k\}) =$
 			&+ \lambda_{int, abr}\big[E_j\big[V(\{q_t^{p-},k^{p-}\}\cup \{q_{t+\Delta t,j_p}, 0\}\big] - V(q_{t},k)\big]\\
 			&\qquad\quad \ \ - \tau\big[V(\{q_t,k\}\setminus \{q_t^p,k^p\}) - V(q_t,k)\big]\\
 		\end{aligned}\right]\\
-		&+ \lambda_{ext, abr}\big[E_j\big[V(\{q_t,k\}\cup \{q_{t+\Delta t}^{p'},k^{p'}\}\big] - V(\{q_t,k\})\big] - \xi_{abr}\bar{q}_t\lambda_{ext}^{\psi_{abr}}
+		&+ \lambda_{ext, abr}\big[E_j\big[V(\{q_t,k\}\cup \{q_{t+\Delta t}^{p'},0\}\big] - V(\{q_t,k\})\big] - \xi_{abr}\bar{q}_t\lambda_{ext}^{\psi_{abr}}
 	\end{aligned}\right] 
 \end{equation}
 
@@ -288,7 +266,7 @@ Denote $\eta_k$ the share of abrupt patents that have received $k$ citations (wh
 $$\begin{array}{llll}
 \textit{Level} & \textit{Inflow} &  & \textit{Outflow}\\
 k = 0 & \tau + \lambda_{int,abr} & = & \eta_0(\lambda_{inc,0} + \lambda_{int,abr} + \tau)\\
-k \geq 1 & \eta_{k-1}\lambda_{inc,k-1} & = & \eta_n(\lambda_{inc,k} + \lambda_{int,abr} + \tau)\\
+k \geq 1 & \eta_{k-1}\lambda_{inc,k-1} & = & \eta_k(\lambda_{inc,k} + \lambda_{int,abr} + \tau)\\
 \end{array}$$
 
 For the first citation level, inflows come from the aggregate arrival of internal abrupt patents from all steps and from external creative destruction, while outflows originate from products at level 0 that get an incremental innovation (i.e. a new citation), from internal abrupt innovation of product lines with no citation and from creative destruction. For all the other citation levels $k$, inflows come from successful incremental R\&D from the previous level $k-1$, while outflows are either a result of patents with $k$ citations receiving a citation from a subsequent incremental development, from abrupt internal innovation at that level or from outside creative destruction.
@@ -303,7 +281,7 @@ Solving for all levels gives:
 \eta_k = \eta_{k-1}\Big[\frac{\lambda_{inc,k-1}}{\lambda_{inc,k} +\lambda_{int,abr} + \tau}\Big]
 \end{equation}
 
-\subsection{A Subsection}
+\section{Estimation}\label{sec:Estimation}
 
 In order to confirm the results from the maximum likelihood estimation, a second estimation routine was created using the Generalized Method of Moments. The adopted strategy was to estimate $\hat{\theta}_{GMM} = (\tau + \lambda_{int,abr}, \lambda_{inc,0}, \alpha)$ by solving equation~\eqref{eq:GMM} with the actual and the estimated moments ($m^d(x)$ and $m^e(x|\theta_{GMM})$, respectively, where $x$ is the real data).
 
@@ -370,9 +348,14 @@ To test for robustness on both GMM and MLE, we have also checked the predictions
 	\end{tabular}
 \end{table}
 
+\section{Results}\label{sec:Results}
+
+\section{Conclusion}\label{sec:Conclusion}
+
 % Bibliography.
 
-\bibliographystyle{jfe}
+\bibliographystyle{acm}
+\nocite{*}
 \bibliography{Paper}
 
 \clearpage
@@ -393,6 +376,42 @@ Here's an appendix with an equation. Note that equation numbering continues wher
     \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{RD_spending_ratio.jpeg}}}
     \caption{\label{fig:RD_spending_rat}\textit{Evolution of the ratio of median R\&D spending between sprinter firms and the whole economy.}}
 \end{figure}
+
+\begin{table}[!htbp] \centering 
+  \caption{Regression Results} 
+  \label{tab:Pat_reg} 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{Labor Productivity} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)}\\ 
+\hline \\[-1.8ex] 
+ Dummy.t & 0.005 & 0.005 & 0.005 \\ 
+  & (0.011) & (0.012) & (0.012) \\ 
+  Dummy.t-1 & -0.012 & -0.013 & -0.013 \\ 
+  & (0.012) & (0.012) & (0.012) \\ 
+  Dummy.t-2 & 0.025^{*} & 0.022 & 0.022 \\ 
+  & (0.012) & (0.012) & (0.012) \\ 
+  Dummy.t-3 & 0.024^{*} & 0.021 & 0.020 \\ 
+  & (0.012) & (0.012) & (0.012) \\ 
+  Dummy.t-4 & -0.025^{*} & -0.030^{*} & -0.031^{*} \\ 
+  & (0.012) & (0.012) & (0.012) \\ 
+  Dummy.t-5 &  & 0.028^{*} & 0.026^{*} \\ 
+  &  & (0.012) & (0.012) \\ 
+  Dummy.t-6 &  &  & 0.013 \\ 
+  &  &  & (0.013) \\ 
+ \hline \\[-1.8ex] 
+Firm fixed effects & Yes & Yes & Yes \\ 
+Year fixed effects & Yes & Yes & Yes \\ 
+Observations & \multicolumn{1}{c}{38,035} & \multicolumn{1}{c}{37,549} & \multicolumn{1}{c}{37,017} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.0004} & \multicolumn{1}{c}{0.001} & \multicolumn{1}{c}{0.001} \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\ 
+\end{tabular} 
+\end{table}
 
 \begin{figure}[htb]\centering \captionsetup{width=5.8in}
     \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{QLadder.png}}}
