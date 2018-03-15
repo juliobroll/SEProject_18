@@ -287,28 +287,46 @@ Solving for all levels gives:
 \subsection{Link Between Patent Citations and Theory}
 Multiple assumptions are needed to relate the various features of the patent citation dataset to our theoretical model:
 \begin{itemize}
-	\item Every patent represents a single innovation.
-	\item Abrupt patents will receive more total citations than incremental patents.
-	\item An abrupt patent receives a citation from a patent within its same classification if and only if the citing patent represents an incremental innovation within the abrupt patent’s technology cluster.
-	\item Internal innovations will receive more self-citations (citations from future patents by that same company) than external innovations.
+	\item i) Every patent represents a single innovation;
+	\item ii) Abrupt patents will receive more total citations than incremental patents;
+	\item iii) An abrupt patent receives a citation from a patent within its same classification if and only if the citing patent represents an incremental innovation within the abrupt patent’s technology cluster;
+	\item iv) Internal innovations will receive more self-citations (citations from future patents by that same company) than external innovations.
 \end{itemize}
-Assumptions one, two, and four are made in AK2016 based on empirical evidence (albeit of varying degrees). Assumption three is very important to our estimation scheme. It states that every incremental innovation will cite the abrupt patent that started its technology cluster, and that they will always be within the same patent classification. The provides a clear link between the data and the theoretical distribution in equations 14-15. If an abrupt innovation’s technology cluster had k incremental innovations, that abrupt innovation’s patent will receive k same-class citations.
+Assumptions \textit{i}, \textit{ii}, and \textbf{iv} are made in Akcigit and Kerr (2016) based on empirical evidence (albeit of varying degrees). Assumption \textit{iii} is very important to our estimation scheme and a natural one to make. It states that every incremental innovation will cite the abrupt patent that started its technology cluster, and that they will always be within the same patent classification. This provides a clear link between the data and the theoretical distribution in equations \ref{eq:eta0} and \ref{eq:etak}. If the technology cluster of an abrupt innovation had k incremental innovations, the related patent will receive k same-class citations.
 
-Of course, to estimate the model we also need to identify the abrupt patents. Assumption two tells us that the abrupt patents will have more total citations (same-class plus external-class citations), but it does not give us an exact cutoff. In AK2016 they estimate that the upper ten percent of the total citation distribution contains the abrupt patents, so we use this cutoff in our baseline estimation. Later we test the robustness of our estimates to changes in this value.
+Of course, in order to estimate the model we also need to identify the abrupt patents. Assumption \textit{ii} states that abrupt patents will have more total citations (same-class plus external-class citations), but it does not give us an exact cutoff. In Akcigit and Kerr (2016), they estimate that the upper 10\% of the total citation distribution contains the abrupt patents, so we use this cutoff in our baseline estimation. Later we test the robustness of our estimates to changes in this value.
 
-Using the ten-percent cutoff, we can generate the distribution of same-class citations to abrupt patents (see figure 4). This empirical distribution will be fit to our theoretical distribution from equations 14-15 to estimate the model. Two important features of the empirical distribution is the large mass of patents at zero citations and the large upper tail.
+Using the 10\% cutoff, we can generate the distribution of same-class citations to abrupt patents (c.f. figure \ref{fig:SameClassDistr}). This empirical distribution will be fit to our theoretical distribution from equations \ref{eq:eta0} and \ref{eq:etak} to estimate the model. Two important features of the empirical distribution are the large mass of patents at zero citations and the large upper tail.
 
-It should be noted that, even if the four assumptions listed above are completely accurate, we would expect some abrupt patents to be wrongly classified as incremental due to our ten percent cutoff. According to our theoretical model, there is a chance that an abrupt innovation’s technology cluster will be replace very early on by another abrupt innovation, meaning that it will receive very few same-class citations. While the abrupt patent could still receive out of class citations after being replaced (and in fact, we do see many patents with zero same-class citations but many external citations), it could not receive enough to be classified as abrupt. Thus, we expect the empirical distribution in figure 4 to underestimate the amount of abrupt patents with low numbers of citations. The impact of this potential bias on our estimation is discussed below.
+It should be noted that, even if the four assumptions listed above are completely accurate, we would expect some abrupt patents to be wrongly classified as incremental due to our 10\% cutoff. According to our theoretical model, there is a chance that the technology cluster of an abrupt will be replaced very early on by another abrupt innovation, meaning that it will receive very few same-class citations. While the abrupt patent could still receive out of class citations after being replaced (and in fact, we do see many patents with zero same-class citations but many external citations), it could not receive enough to be classified as abrupt. Thus, we expect the empirical distribution in figure \ref{fig:SameClassDistr} to underestimate the amount of abrupt patents with low numbers of citations. The impact of this potential bias on our estimation is discussed below.
 
-\subsection{MLE Estimation}
+\subsection{Maximum Likelihood Estimation}
 
-According to equations 14-15, the theoretical citation distribution of abrupt patents only depends on three parameters: $\alpha$, $\lambda_{inc,0}$, and $\lambda_{abr, int} + \tau$. In addition, the distribution is identical at equal ratios of the arrival rate parameters, so it actually only depends on two independent parameters: $\alpha$ and $\frac{\lambda_{abr, int} + \tau}{\lambda_{inc,0}}$. Intuitively, $\alpha$ governs rate at which the incremental innovation step size decays after multiple incremental innovations ($\alpha$ equal to one implies a constant step size). The value of  $\frac{\lambda_{abr, int} + \tau}{\lambda_{inc,0}}$ is determined by the relative amount of incremental compared with abrupt innovations in the entire economy.
+According to equations \ref{eq:eta0} and \ref{eq:etak}, the theoretical citation distribution of abrupt patents only depends on three parameters: $\alpha$, $\lambda_{inc,0}$, and $\lambda_{abr, int} + \tau$. In addition, the distribution is identical at equal ratios of the arrival rate parameters, so it actually only depends on two independent parameters: $\alpha$ and $\frac{\lambda_{abr, int} + \tau}{\lambda_{inc,0}}$. Intuitively, $\alpha$ governs rate at which the incremental innovation step size decays after multiple incremental innovations ($\alpha$ equal to one implies a constant step size). The value of $\frac{\lambda_{abr, int} + \tau}{\lambda_{inc,0}}$ is determined by the relative amount of incremental compared with abrupt innovations in the entire economy.
 
-Given a set of parameter values, the resulting citation distribution looks like a gamma distribution, with a large upper tail and the possibility of a mode greater than zero. A larger value of $\frac{\lambda_{abr, int} + \tau}{\lambda_{inc,0}}$  means that there are relatively more abrupt innovations, which means that more product lines will be replaced before their originating patents can accrue a large number of citations. Thus, increasing $\frac{\lambda_{abr, int} + \tau}{\lambda_{inc,0}}$ shifts the distribution to the left. Reducing the value of $\alpha$ means that the firms will invest relatively more in incremental innovation early in the product lifecycle (due to the diminishing returns to incremental innovation). For low enough values of $\alpha$, this can lead to a peak in the distribution at a citation value greater than zero, as firms almost always invest in the first incremental innovation but invest increasingly less in the late ones. Theoretical graphs for various parameter values are shown in figure 5.
+Given a set of parameter values, the resulting citation distribution looks like a gamma distribution, with a large upper tail and the possibility of a mode greater than zero. A larger value of $\frac{\lambda_{abr, int} + \tau}{\lambda_{inc,0}}$  means that there are relatively more abrupt innovations, which means that more product lines will be replaced before their originating patents can accrue a large number of citations. Thus, increasing $\frac{\lambda_{abr, int} + \tau}{\lambda_{inc,0}}$ shifts the distribution to the left. Reducing the value of $\alpha$ means that the firms will invest relatively more in incremental innovation early in the product life-cycle (due to the diminishing returns to incremental innovation). For low enough values of $\alpha$, this can lead to a peak in the distribution at a citation value greater than zero, as firms almost always invest in the first incremental innovation but invest increasingly less in the late ones. Theoretical graphs for various parameter values are shown in figure \ref{fig:ImpactPar}.
 
-We estimate the two parameters using maximum likelihood estimation. Our theoretical model gives a probability mass distribution for every whole number of citations, but the actual data shows fractional values (this is because, to address the fact that newer patents did not have as long of a time to gain citations, we used a measure of expected citations that allowed for non-whole numbers). To address this, we rounded the expected citation variable to the nearest whole number, and then took the likelihood as the theoretical pmf value at that point.
+We estimate the two parameters using maximum likelihood estimation. Our theoretical model gives a probability mass distribution for every whole number of citations, but the actual data shows fractional values (this is due to the diffusive correction factor from Hall et al., 2001). To address this, we rounded the expected citation variable to the nearest whole number, and then took the likelihood as the theoretical PMF value at that point.
 
 The resulting parameter estimates are shown in figure 6, and the fit is plotted in figure 7.  The estimated ratio of incremental to abrupt patents is about 10:1, which is consistent with the fact that we defined the upper ten percent of patents in the citation distribution as being abrupt. The estimate of $\alpha$ is equal to one. This indicates that firms do not face diminishing returns to initial investment. This has very important theoretical implications, which will be discussed later on.
+
+\begin{table}[htbp] \centering \captionsetup{width=5.8in}
+    \caption{\label{MLETable}\textit{Results from the maximum likelihood estimation}}
+	\centering
+	\begin{tabular}{l llp{1.5cm} p{0.5cm} llp{1.5cm} llp{1.5cm}}
+	\toprule
+	MLE & \multicolumn{1}{c}{$\alpha$} & \multicolumn{1}{c} {$\frac{\lambda_{abr, int} + \tau}{\lambda_{inc,0}}$} \\ 
+	\midrule
+	Results & 10.06 & 7.39\\
+	Mean of first 5 seq. ratios & 0.57 & 0.88\\
+	Sum of first 2 bins & 0.26 & 0.22\\
+	R\&D Intensity & 0.068 & 0.068\\
+	Criterion & & 0.386\\
+	\midrule
+	$(\hat{\tau} + \hat{\lambda}_{int,abr}, \hat{\lambda}_{inc,0}, \hat{\alpha}) = (0.047, 0.351, 1)$\\
+	\bottomrule
+	\end{tabular}
+\end{table}
 
 Looking at figure 7, we see that the data fits most of the distribution closely (including the upper tail, which is not pictured), but significantly underestimates the amount of zero-citation patents. We find that, when observations in the upper tail are eliminated, the estimation better fits the zero-citation data (see figure 8), indicating that the model is unable to completely capture both of those features. Now, it may seem fairly ad-hoc to eliminate observations in the upper tail, but there may be a theoretical justification for doing so. Our model, in keeping with AK2016, only allows for two scales of innovation: abrupt and incremental. This assumption seems to be made only for mathematical simplicity; while there is plenty of evidence that some patents are more valuable than others, there seems to be no evidence of a binary distinction. One might expect that patents in the upper tail of our empirical distribution (it had a max of 741 citations) are significantly more productive than the others. However, under our simple binary model, those patents are identical to the others from a productivity standpoint, and the only reason they gained more citations was through chance. Thus, because a more complete model may place the upper-tail observations in a separate classification, it is reasonable to be suspicious of estimation results that are pinned down by the upper tail.
 
@@ -487,6 +505,16 @@ R$^{2}$ & \multicolumn{1}{c}{0.0004} & \multicolumn{1}{c}{0.001} & \multicolumn{
 \begin{figure}[htb]\centering \captionsetup{width=5.8in}
     \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{QLadder.png}}}
     \caption{\label{fig:QLadder}\textit{Example of sequential innovations in a given product line, for different generations.}}
+\end{figure}
+
+\begin{figure}[htb]\centering \captionsetup{width=5.8in}
+    \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{SameClass_hist.png}}}
+    \caption{\label{fig:SameClassDistr}\textit{Distribution of same-class abrupt patents by the number of received citations.}}
+\end{figure}
+
+\begin{figure}[htb]\centering \captionsetup{width=5.8in}
+    \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{Impact_parameters.png}}}
+    \caption{\label{fig:ImpactPar}\textit{Theoretical distribution of patents per number of citations for different sets of parameters.}}
 \end{figure}
 
 \begin{figure}[htb]\centering \captionsetup{width=5.8in}
