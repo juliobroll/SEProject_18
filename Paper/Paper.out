@@ -9,6 +9,10 @@
 \BOOKMARK [2][-]{subsection.3.4}{Incumbents}{section.3}% 9
 \BOOKMARK [2][-]{subsection.3.5}{Stationary Distributions of Products and Citations}{section.3}% 10
 \BOOKMARK [1][-]{section.4}{Estimation}{}% 11
-\BOOKMARK [1][-]{section.5}{Results}{}% 12
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 13
-\BOOKMARK [1][-]{appendix.A}{An Appendix}{}% 14
+\BOOKMARK [2][-]{subsection.4.1}{Link Between Patent Citations and Theory}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.2}{Maximum Likelihood Estimation}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.3}{First Robustness Check: GMM Estimation}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.4}{Other Robustness Checks}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Results}{}% 16
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 17
+\BOOKMARK [1][-]{appendix.A}{An Appendix}{}% 18
