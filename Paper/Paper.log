@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.13)  16 MAR 2018 00:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.13)  16 MAR 2018 14:00
 entering extended mode
 **Paper.tex
 (Paper.tex
@@ -373,41 +373,41 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/Julio Roll/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 115.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 117.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
  [3] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
-[7] [8] [9]
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
+
+ []
+
+[7] [8] [9] [10]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
- [10] [11] [12] [13] [14] [15] [16] [17] [18] (Paper.bbl [19])
+ [11] [12] [13] [14] [15] [16] [17] [18] [19] (Paper.bbl)
 [20]
-Overfull \hbox (27.69933pt too wide) in paragraph at lines 481--482
+Overfull \hbox (27.69933pt too wide) in paragraph at lines 483--484
 \OT1/cmr/m/n/12 rithms that were used in this pa-per, re-fer to $[][] \OML/cmm/
 m/it/12 https \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 ==github:com=juliobroll=SEProj
 ect[]\OT1/cmr/m/n/12 8$. 
@@ -416,55 +416,55 @@ ect[]\OT1/cmr/m/n/12 8$.
 <CBFirms.jpeg, id=84, 301.125pt x 246.1697pt>
 File: CBFirms.jpeg Graphic file (type jpg)
  <use CBFirms.jpeg>
-Package pdftex.def Info: CBFirms.jpeg used on input line 484.
+Package pdftex.def Info: CBFirms.jpeg used on input line 486.
 (pdftex.def)             Requested size: 301.12425pt x 246.16908pt.
 
 <RD_spending_ratio.jpeg, id=85, 301.125pt x 246.1697pt>
 File: RD_spending_ratio.jpeg Graphic file (type jpg)
 
 <use RD_spending_ratio.jpeg>
-Package pdftex.def Info: RD_spending_ratio.jpeg used on input line 489.
+Package pdftex.def Info: RD_spending_ratio.jpeg used on input line 491.
 (pdftex.def)             Requested size: 301.12425pt x 246.16908pt.
  <QLadder.png, id=86, 288.47775pt x 175.857pt>
 File: QLadder.png Graphic file (type png)
 
 <use QLadder.png>
-Package pdftex.def Info: QLadder.png used on input line 494.
+Package pdftex.def Info: QLadder.png used on input line 496.
 (pdftex.def)             Requested size: 288.47704pt x 175.85657pt.
  <SameClass_hist.png, id=87, 462.528pt x 346.896pt>
 File: SameClass_hist.png Graphic file (type png)
 
 <use SameClass_hist.png>
-Package pdftex.def Info: SameClass_hist.png used on input line 535.
+Package pdftex.def Info: SameClass_hist.png used on input line 537.
 (pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
  <Impact_parameters.png, id=89, 462.528pt x 346.896pt>
 File: Impact_parameters.png Graphic file (type png)
 
 <use Impact_parameters.png>
-Package pdftex.def Info: Impact_parameters.png used on input line 540.
+Package pdftex.def Info: Impact_parameters.png used on input line 542.
 (pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
  <MLE.png, id=90, 348.70274pt x 252.945pt>
 File: MLE.png Graphic file (type png)
 
 <use MLE.png>
-Package pdftex.def Info: MLE.png used on input line 545.
+Package pdftex.def Info: MLE.png used on input line 547.
 (pdftex.def)             Requested size: 348.70187pt x 252.94438pt.
  <MLE_extail.png, id=91, 348.1005pt x 253.54726pt>
 File: MLE_extail.png Graphic file (type png)
 
 <use MLE_extail.png>
-Package pdftex.def Info: MLE_extail.png used on input line 550.
+Package pdftex.def Info: MLE_extail.png used on input line 552.
 (pdftex.def)             Requested size: 348.09964pt x 253.54662pt.
  <Crit.png, id=92, 287.8755pt x 201.1515pt>
 File: Crit.png Graphic file (type png)
  <use Crit.png>
-Package pdftex.def Info: Crit.png used on input line 555.
+Package pdftex.def Info: Crit.png used on input line 557.
 (pdftex.def)             Requested size: 287.87479pt x 201.151pt.
 
 <GMM_MLE.png, id=93, 354.123pt x 254.75175pt>
 File: GMM_MLE.png Graphic file (type png)
  <use GMM_MLE.png>
-Package pdftex.def Info: GMM_MLE.png used on input line 560.
+Package pdftex.def Info: GMM_MLE.png used on input line 562.
 (pdftex.def)             Requested size: 354.12212pt x 254.75111pt.
  [21
 
@@ -474,7 +474,7 @@ lass_hist.png> <./Impact_parameters.png> <./MLE.png>] [24 <./MLE_extail.png> <.
 Here is how much of TeX's memory you used:
  4775 strings out of 493636
  67564 string characters out of 3143738
- 143120 words of memory out of 3000000
+ 143122 words of memory out of 3000000
  8037 multiletter control sequences out of 15000+200000
  24221 words of font info for 93 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -497,7 +497,7 @@ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/public/rsfs/rsfs10.pfb>
-Output written on Paper.pdf (24 pages, 581792 bytes).
+Output written on Paper.pdf (24 pages, 583133 bytes).
 PDF statistics:
  171 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
