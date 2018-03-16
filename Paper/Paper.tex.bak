@@ -22,10 +22,7 @@
 \usepackage{geometry}
 \usepackage{pdflscape}
 \synctex=1
-\usepackage{hyperref}
-\hypersetup{colorlinks,linkcolor=red,urlcolor=blue,citecolor=red}
 \usepackage{bm}
-
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}
 \newtheorem{acknowledgement}[theorem]{Acknowledgement}
@@ -63,10 +60,10 @@
 
 \begin{document}
 
-\title{A Sample JFE Paper\footnotetext{Financial support from \ldots}}
+\title{Endogenous Heterogeneous Innovation}
 
-\author{Richard Stanton\\
-  U.C. Berkeley}
+\author{Julio Roll\\Scott Behmer\\
+  The University of Chicago}
 
 \date{}              % No date for final submission
 
@@ -81,20 +78,16 @@
 \vspace{-.2in}
 \begin{abstract}
 \noindent 
-In this paper a subset of parameters are estimated for a novel endogenous growth model. Building on previous work in which a distinction is made between different types of innovation, in this model firms choose endogenously between investing in abrupt or incremental innovations. This can lead to many interesting predictions regarding variation in R\&D investment choices over time. The model is fit to citation distributions for the entire US economy using structural estimation methods. The parameter estimates imply that there are no diminishing returns to incremental innovations, which has important theoretical implications.
+In this paper, a subset of parameters are estimated for a novel endogenous growth model. Building on previous work in which a distinction is made between different types of innovation, in this model firms choose endogenously between investing in abrupt or incremental innovations. This can lead to many interesting predictions regarding variation in R\&D investment choices over time. The model is fit to citation distributions for the entire US economy using structural estimation methods. The parameter estimates imply that there are no diminishing returns to incremental innovations, which has important theoretical implications.
 \end{abstract}
 
 \medskip
-
-\noindent \textit{JEL classification}: XXX, YYY.
-
-\medskip
-\noindent \textit{Keywords}: \LaTeX; papers with no content.
+\noindent \textit{Keywords}: Endogenous Growth, Innovation, Research and Development, Patents, Citations, Productivity.
 
 \thispagestyle{empty}
 
 \onehalfspacing
-\setcounter{footnote}{0}
+\setcounter{footnote}{1}
 \renewcommand{\thefootnote}{\arabic{footnote}}
 \setcounter{page}{1}
 
@@ -125,15 +118,15 @@ In order to analyze the intrinsic relationship between firm dynamics and R\&D be
 
 \subsection{Empirical Observations}
 
-The idea of analyzing the intertemporal productivity choice that firms face when deciding whether to continue on the diminishing returns path of incremental innovations or to successfully innovate a product line abruptly, at the expense of a temporary productivity slump, comes from two observations in the data.
+The idea of analyzing the intertemporal productivity choice that firms face when deciding whether to continue on the diminishing returns path of incremental innovations or to successfully innovate a product line abruptly, at the expense of a temporary productivity slump, comes from two observations in the data. Even though those observations are not directly related to the estimation procedure in this paper (c.f. section \ref{sec:Estimation}), we deem it important to always have them in mind throughout the analysis.
 
 First, one should note that, since the 1970s (but more strongly in the 1980s), there has been a surge in the number of what we will denote as \textit{"sprinter firms"}: firms that report negative profits, but grow faster than their entire sector of activity (e.g. Amazon in the early 2000s). Figure \ref{fig:CBFirms} highlights the increasing share of sprinter firms in the US economy. This fact is robust if, instead, we weight each company by their employment share. Impressive in itself, this observation is doubly interesting by the fact that those firms invest more in R\&D, when comparing median values, than the entire economy. Figure \ref{fig:RD_spending_rat} shows the evolution of this ratio for the US economy. This observation is robust if we restrict comparisons by SIC Code.
 
 If we assume that firms, at some point, should start making profits, this means that a significant share of firms are entering in a temporary R\&D "sprint race": they increase their innovation effort in order to succeed. The theoretical framework behind this rationale is that, after making an abrupt innovation, a firm is impacted by a productivity decline. However, since a radical innovation opens a new production potential, returns to R\&D are bigger, hence companies have an incentive to make R\&D efforts.
 
-Secondly, the productivity slump from abrupt innovation is observed at the firm level. Table \ref{tab:Pat_reg} shows a persistent and significant labor productivity decline 4 years after a firm files an abrupt patent application (taken, here, as the top 10\% of patents in number of citations). This is done by regressing firm-level labor productivity growth with lagged dummy variables that capture the (lagged) arrival of an abrupt patent. We also control for firm-level fixed effects and yearly fixed effects that could be related with macro technological shifts. This goes in line with the idea that those type of patents require a major shift in production (e.g. labor, machines), imposing a productivity toll since firms have to rebuild their accumulated knowledge in the new production.
+Secondly, the productivity slump from abrupt innovation is observed at the firm level. Table \ref{tab:Pat_reg} shows a persistent and significant labor productivity decline 4 years after a firm files an abrupt patent application (taken, here, as the top 10\% of patents in number of citations). This is done by regressing firm-level labor productivity growth with lagged dummy variables that capture the (lagged) arrival of an abrupt patent. We also control for firm-level fixed effects and yearly fixed effects that could be related with macro technological shifts. This goes in line with the idea that those type of patents require a major shift in production (e.g. labor, machines), imposing a productivity toll since firms have to rebuild their accumulated knowledge in the new production (at the momentary expense of profits).
 
-In section \ref{sec:Model}, we propose a model that will highlight the R\&D pattern observed in both of these stylized facts.
+In section \ref{sec:Model}, we propose a model that will highlight the R\&D pattern observed in both of these stylized facts through the complementary dynamic between incremental and radical innovations.
 
 \section{The Model} \label{sec:Model}
 
@@ -284,6 +277,8 @@ Solving for all levels gives:
 
 \section{Estimation}\label{sec:Estimation}
 
+In this section, we will describe the estimation procedure that was employed in order to estimate the model parameters that are related to R\&D. This is done by taking the model predictions directly to the USPTO data on patents and citations. Even though we do not estimate the model in its entirety, the innovation-related parameters are the core of the theoretical framework.
+
 \subsection{Link Between Patent Citations and Theory}
 Multiple assumptions are needed to relate the various features of the patent citation dataset to our theoretical model:
 \begin{itemize}
@@ -310,12 +305,12 @@ We estimate the two parameters using a Maximum Likelihood Estimation (MLE). Our 
 
 The resulting parameter estimates are shown in table \ref{tab:MLETable}, and the fit is plotted in figure \ref{fig:MLE}. The estimated ratio of incremental to abrupt patents is about 10:1, which is consistent with the fact that we defined the upper 10\% of patents in the citation distribution as being abrupt. The estimate of $\alpha$ is equal to one. This indicates that firms do not face diminishing returns to initial investment. This has very important theoretical implications, which will be discussed later on.
 
-\begin{table}[htbp] \centering \captionsetup{width=5.8in}
+\begin{table}[htbp]\centering \captionsetup{width=5.8in}
     \caption{\label{tab:MLETable}\textit{Results from the maximum likelihood estimation}}
 	\centering
-	\begin{tabular}{l llp{1.5cm} p{0.5cm} llp{0.5cm} p{0.5cm}}
+	\begin{tabular}{>{\small}l >{\small}l >{\small}c >{\small}r}
 	\toprule
-	MLE & \multicolumn{1}{c}{$\alpha$} & \multicolumn{1}{c}{$\frac{\lambda_{abr, int} + \tau}{\lambda_{inc,0}}$} & \multicolumn{1}{c}{Criterion}\\
+	Parameters & \multicolumn{1}{c}{$\alpha$} & \multicolumn{1}{c}{$\frac{\lambda_{abr, int} + \tau}{\lambda_{inc,0}}$} & \multicolumn{1}{c}{Criterion}\\
 	\midrule
 	Results & 1.0 & 0.0995 & 634983.15\\
 	\bottomrule
@@ -365,7 +360,7 @@ The results of the estimation can be seen in Table \ref{GMMTable}. The overall e
 \begin{table}[htbp] \centering \captionsetup{width=5.8in}
     \caption{\label{GMMTable}\textit{Estimated and data moments using the Generalized Method of Moments}}
 	\centering
-	\begin{tabular}{l llp{1.5cm} p{0.5cm} llp{1.5cm}}
+	\begin{tabular}{>{\small}l >{\small}c >{\small}c}
 	\toprule
 	Moment & \multicolumn{1}{c}{Data} & \multicolumn{1}{c}				{Model} \\ 
 	\midrule
@@ -385,7 +380,7 @@ To test for robustness on both GMM and MLE, we have also checked the predictions
 \begin{table}[htbp] \centering \captionsetup{width=5.8in}
     \caption{\label{Untarg}\textit{Estimated and actual results for the untargeted share of incremental R\&D effort}}
 	\centering
-	\begin{tabular}{l llp{1.5cm} p{0.5cm} llp{1.5cm}}
+	\begin{tabular}{>{\small}l >{\small}c >{\small}c}
 		\toprule
 		Moment & \multicolumn{1}{c}{Data} & \multicolumn{1}{c}				{Model} \\ 
 		\midrule
@@ -403,12 +398,12 @@ The GMM results suggest that the main features of our MLE estimation are not sim
 
 As far as theoretical assumptions, we will now test the robustness of our estimates to variations in the 10\% cutoff that defines an abrupt innovation. While the 10\% value is similar to the one estimated by Akcgit and Kerr (2016) and is used in other papers, those papers use a different theoretical model. Furthermore, there is no defining feature of the citation distribution at the 10\% cutoff (e.g. no discontinuity or anything). Considering this, it is necessary to check whether our results are robust to changes in this cutoff.
 
-The MLE estimates for cutoffs of 20\% and 5\%, alongside the baseline results, are shown in table \ref{tab:Cutoff}. We see that the arrival rates move in the direction that you would expect; the relative amount of abrupt patents drops when the cutoff is 5\% and increases when the cutoff is 20\%. More importantly, we find that $\alpha$ is still equal to one.
+The MLE estimates for cutoffs of 20\% and 5\%, alongside the baseline results, are shown in table \ref{tab:Cutoff}. We see that the arrival rates move in the direction that one would expect; the relative amount of abrupt patents drops when the cutoff is 5\% and increases when the cutoff is 20\%. More importantly, we find that $\alpha$ is still equal to one.
 
-\begin{table}
-	\caption*{MLE results for different abrupt cutoff levels.}
+\begin{table}[htbp]
+	\caption{MLE results for different abrupt cutoff levels.}
 	\centering\label{tab:Cutoff}
-	\begin{tabular}{l llp{1.5cm} p{0.5cm} llp{1.5cm}}
+	\begin{tabular}{>{\small}l >{\small}c >{\small}c >{\small}c}
 		\toprule
 		Abrupt Cutoff & \multicolumn{1}{c}{10\%} & \multicolumn{1}{c}{20\%} & \multicolumn{1}{c}{5\%}\\ 
 		\midrule
@@ -433,16 +428,16 @@ f_i = \displaystyle\sum_{k=0}^{\infty}\eta_k * Prob_{i, k}
 
 The addition of the probability parameter $p$ gives the model more flexibility. A lower value of $p$ shifts the distribution left.
 
-The MLE estimates for this updated model are presented in table \ref{tab:Prob} and figure 11. We see that $p$ is equal to one, with the other parameters identical to our baseline model. This seems to validate our original assumption of setting $p$ equal to one. There are a few caveats, however, with this robustness check. First, as was mentioned above, even in our baseline model there is a problem with the classification of abrupt patents. It is likely that abrupt patents which are displaced early on by another abrupt patent will never gain enough citations to reach our cutoff value. This leads our empirical distribution (shown in figure 2) to underestimate the number of abrupt patents with a low number of citations. When the probability of citing is less than one, we would expect this underestimation to be even greater. This bias could cause us to overestimate the value of $p$.
+The MLE estimates for this updated model are presented in table \ref{tab:Prob}. We see that $p$ is equal to one, with the other parameters identical to our baseline model. This seems to validate our original assumption of setting $p$ equal to one. There are a few caveats, however, with this robustness check. First, as was mentioned above, even in our baseline model there is a problem with the classification of abrupt patents. It is likely that abrupt patents which are displaced early on by another abrupt patent will never gain enough citations to reach our cutoff value. This leads our empirical distribution (shown in figure \ref{fig:SameClassDistr}) to underestimate the number of abrupt patents with a low number of citations. When the probability of citing is less than one, we would expect this underestimation to be even greater. This bias could cause us to overestimate the value of $p$.
 
-\begin{table}
-	\caption*{Robustness Specification Results}
+\begin{table}[htbp]
+	\caption{Robustness Specification Results}
 	\centering\label{tab:Prob}
-	\begin{tabular}{l llp{1.5cm} p{0.5cm} llp{1.5cm}}
+	\begin{tabular}{>{\small}l >{\small}c >{\small}c}
 		\toprule
 		    & \multicolumn{1}{c}{Baseline} & \multicolumn{1}{c}{Flexible}\\ 
 		\midrule
-		$\frac{\lambda_{inc, 0}}{(\lambda_{abr} + \tau)}$ & .104 & .104 \\
+		$\frac{\lambda_{inc, 0}}{(\lambda_{abr} + \tau)}$ & 0.104 & 0.104 \\
 		$\alpha$ & 1.0 & 1.0\\
 		$p$ & - & 1.0 \\
 		log-likelihood & -627597 & -627598 \\
@@ -450,23 +445,27 @@ The MLE estimates for this updated model are presented in table \ref{tab:Prob} a
 	\end{tabular}
 \end{table}
 
-While we were able to test the robustness of our estimation to multiple key theoretical assumptions, there are still others that have not been checked. Of these, we think the most in need of support are assumptions 1-2 from the citation section: that abrupt patents will receive a large number of total citations and that same-class citations are those that directly fall within the abrupt patent’s technology cluster. Intuitively, this seems like it may be a good approximation, and it is similar to other assumptions made in previous Akcigit papers, but we do not have any actual empirical evidence to support it. Considering that our whole estimation strategy rests on those assumptions, further empirical research into their validity is needed.
+While we were able to test the robustness of our estimation to multiple key theoretical assumptions, there are still others that have not been checked. Of these, we think the most in need of support are assumptions \textit{i} and \textit{ii} from the citation section: that abrupt patents will receive a large number of total citations and that same-class citations are those that directly fall within the technology cluster of the abrupt patent. Intuitively, this seems like it may be a good approximation, since one would expect that abrupt innovation embodies important technological breakthroughs, and it is similar to other assumptions made in previous papers. However, we do not have any actual empirical evidence to support it. Considering that our whole estimation strategy rests on those assumptions, further empirical research into their validity is needed.
 
 \section{Results}\label{sec:Results}
 %Add a further discussion of the importance of alpha =1 in relation to the broader motivations of the paper (that is, its relations to intertemporal tfp choice).
 
-Through all robustness checks, the most constant result was that $\alpha = 1$. This has very important theoretical implications.  If accurate, it indicates that there are no diminishing returns to incremental innovations. This severely limits the strategic behavior predicted by the model. With $\alpha$ less than one, we would expect to see firms cycle between abrupt and incremental R\&D, as incremental innovations are initially very profitiable following an abrupt innovation, but eventually dry up. It is this dynamic that led to interesting predictions involving intertemporal productivity choice. With $\alpha$ equal to one, however, the profitability of incremental innovations is completely independent of the timing of the last abrupt innovation. Firms will always invest a constant amount in either type of innovation unless there are changes in the exogenous parameters of the model.
+Through all robustness checks, the most constant result was that $\alpha = 1$. This has very important theoretical implications. If accurate, it indicates that there are no diminishing returns to incremental innovations. This severely limits the strategic behavior predicted by the model. With $\alpha$ less than one, we would expect to see firms cycle between abrupt and incremental R\&D, as incremental innovations are initially very profitable following an abrupt innovation, but eventually dry up. It is this dynamic that led to interesting predictions involving intertemporal productivity choice. With $\alpha$ equal to one, however, the profitability of incremental innovations is completely independent of the timing of the last abrupt innovation. Firms will always invest a constant amount in either type of innovation unless there are changes in the exogenous parameters of the model.
 
-Our estimates of $\lambda_{abr, int} + \tau$ and $\lambda_{inc,0}$ are signficantly less interesting. As was expected, these estimates are sensitive to theoretical assumptions, especially the assumption that defines abrupt patents as a certain upper percentile of the citation distribution. When we assume that abrupt patents are the upper ten percent of patents, we find the ubrupt arrival rate $\lambda_{abr, int} + \tau$ to be between nine and ten times smaller than the incremental arrival rate $\lambda_{inc,0}$. When the cutoff is raised or lowered, the arrival rate parameters move in the direction that one would expect. Now, there was no guarantee that our estimates would match up with our assumptions this well; the patent citation distribution could have been shaped such that our ratio of lambdas was completely different from our assumed fraction of abrupt patents. Thus, these parameter estimates slighly increase our confidence in the model's ability to fit reality, but they do not have major theoretical implications.
+It should be noted that other authors$^1$\footnotetext{Such as Akcigit and Kerr (2016) and Acemoglu et al. (2014)} do not find such a robust constancy of returns on incremental innovation. This could mean that the theoretical framework requires additional complexity (e.g. variable internal abrupt arrival rates).
+
+Our estimates of $\lambda_{abr, int} + \tau$ and $\lambda_{inc,0}$, as expected, are sensitive to theoretical assumptions, especially the assumption that defines abrupt patents as a certain upper percentile of the citation distribution. When we assume that abrupt patents are the upper 10\% of patents, we find the abrupt arrival rate $\lambda_{abr, int} + \tau$ to be between nine and ten times smaller than the incremental arrival rate $\lambda_{inc,0}$. When the cutoff is raised or lowered, the arrival rate parameters move in the direction that one would expect. Now, there was no guarantee that our estimates would match up with our assumptions this well; the patent citation distribution could have been shaped such that our ratio of lambdas was completely different from our assumed fraction of abrupt patents. Thus, these parameter estimates slightly increase our confidence in the model's ability to fit reality.
+
+Regarding innovation dynamics, the fact that incremental R\&D does not run into diminishing returns would discourage firms to do internal abrupt innovation, since the main incentive behind this type of R\&D is that the incremental steps are reset, allowing for a higher potential productivity. If there is no decay, firms can reach such productivity levels just by doing incremental innovation. 
 
 \section{Conclusion}\label{sec:Conclusion}
-The estimation presented in this paper is meant to be a first step toward the application our novel endogenous growth model. The model is an updated version of that developed by Akcigit and Kerr (2016), in which a distinction is made between abrupt and incremental innovations (that is, major innovations compared with minor improvements). In their model, however, firms invest in generic R\&D, which results in abrupt or incremental innovations according to an exogenous probability distribution. In our model, this feature is made endogenous; firms choose how much to invest in incremental versus abrupt R\&D. This can lead to many interesting predictions, including that firms may choose to accept a temporary productivity decline after realizing an abrupt innovation, which will eventually lead to higher productivity in the future.
+The estimation presented in this paper is meant to be a first step toward the application of a novel endogenous growth model. The model is an updated version of that developed by Akcigit and Kerr (2016), in which a distinction is made between abrupt and incremental innovations (that is, major innovations compared with minor improvements). In their model, however, firms invest in generic R\&D, which results in abrupt or incremental innovations according to an exogenous probability distribution. In our model, this feature is made endogenous; firms choose how much to invest in incremental versus abrupt R\&D. This can lead to many interesting predictions, including that firms may choose to accept a temporary productivity decline after realizing an abrupt innovation, which will eventually lead to higher productivity in the future.
 
-For this paper, however, we focus on estimating a subset of the model's parameters using aggregate patent citation distributions. Akcigit and Kerr (2016) also use this as a first step in estimating their model. The citation distribution allows us to identify $\alpha$, a parameter that determines the rate of diminishing returns to incremental innovations, and $\frac{\lambda_{abr, int} + \tau}{\lambda_{inc,0}}$, a combined parameter that relates to the amount of abrupt relative to incremental innovations within the entire economy. The parameters are estimated using maximum likelihood estimation. The robustness of the estimates is investigated by using an alternative estimation scheme and by adjusting multiple theoretical assumptions.
+For this paper, however, we focus on estimating a subset of the parameters of the model using aggregate patent citation distributions. The citation distribution allows us to identify $\alpha$, a parameter that determines the rate of diminishing returns to incremental innovations, and $\frac{\lambda_{abr, int} + \tau}{\lambda_{inc,0}}$, a combined parameter that relates to the amount of abrupt relative to incremental innovations within the entire economy. The parameters are estimated using maximum likelihood estimation. The robustness of the estimates is investigated by using an alternative estimation scheme and by adjusting multiple theoretical assumptions.
 
-Our most significant result, which also passes every robustness check, is that the parameter $\alpha$ is equal to one. This finding severely reduces the type of behavior predicted by our model, as it makes impossible any endogenous variation in R\&D investment over time. That being said, more work is needed before we can be confident in the result that $\alpha$ equals one. Most important is to test two key assumptions behind our identification scheme: that abrupt patents will receive a large number of total citations and that same-class citations are those that directly fall within the abrupt patent's technology cluster. Microdata on individual innovations and citation patterns could be used to investigate the legitimacy of these assumptions.
+Our most significant result, which also passes every robustness check, is that the parameter $\alpha$ is equal to one. This finding severely reduces the type of behavior predicted by our model, as it makes impossible any endogenous variation in R\&D investment over time. That being said, more work is needed before we can be confident in the result that $\alpha$ equals one. Most important is to test two key assumptions behind our identification scheme: that abrupt patents will receive a large number of total citations and that same-class citations are those that directly fall within the technology cluster of the abrupt patent. Microdata on individual innovations and citation patterns could be used to investigate the legitimacy of these assumptions.
 
-There are plenty more opportunities for future work. These include estimating the rest of the parameters in our model (which can be done by combining the patent database with compustat data) although the usefulness of the model is brought into question when $\alpha$ is equal to one. The result that $\alpha = 1$ leads to the testable prediction that there will be no correlation between the timing of  incremental and abrupt innovations; this could be checked in future empirical work. Regarding the overall fit of our model, more work needs to be done to explain the underestimate of the number of abrupt patents with zero citations. There is also room for a more sophisticated theoretical treatment of the heterogeneity in innovations, as the simple binary distinction between abrupt and incremental innovations does not seem to match the citation data well. Hopefully these and other future projects will continue to increase our understanding of innovation and economic growth.
+There are plenty more opportunities for future work. These include estimating the rest of the parameters in our model (which can be done by combining the patent database with Compustat data), although the usefulness of the model is brought into question when $\alpha$ is equal to one. This result leads to the testable prediction that there will be no correlation between the timing of incremental and abrupt innovations; this could be checked in future empirical work. Regarding the overall fit of our model, more work needs to be done to explain the underestimate of the number of abrupt patents with zero citations. There is also room for a more sophisticated theoretical treatment of the heterogeneity in innovations, as the simple binary distinction between abrupt and incremental innovations does not seem to match the citation data well. Hopefully these and other future projects will continue to increase our understanding of innovation and economic growth.
 
 % Bibliography.
 
@@ -477,20 +476,23 @@ There are plenty more opportunities for future work. These include estimating th
 \clearpage
 
 \appendix
+\section{Appendix}\label{sec:app1}
 
-\section{An Appendix}
-\label{sec:app1}
+In this Appendix, we provide additional details from the motivational data, the estimations and the robustness tests. For additional details, specially related to the algorithms that were used in this paper, refer to $\;https://github.com/juliobroll/SEProject_18$.
 
-Here's an appendix with an equation. Note that equation numbering continues where it left off in the main body and that the JFE wants the word ``Appendix'' to appear before the letter in the appendix title. This is all handled in \texttt{jfe.sty}.
-
-\begin{figure}[htb]\centering \captionsetup{width=5.8in}
+\begin{figure}[!htbp]\centering \captionsetup{width=5.8in}
     \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{CBFirms.jpeg}}}
     \caption{\label{fig:CBFirms}\textit{Evolution of the ratio of sprinter firms in the economy.}}
 \end{figure}
 
-\begin{figure}[htb]\centering \captionsetup{width=5.8in}
+\begin{figure}[!htbp]\centering \captionsetup{width=5.8in}
     \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{RD_spending_ratio.jpeg}}}
     \caption{\label{fig:RD_spending_rat}\textit{Evolution of the ratio of median R\&D spending between sprinter firms and the whole economy.}}
+\end{figure}
+
+\begin{figure}[!htbp]\centering \captionsetup{width=5.8in}
+    \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{QLadder.png}}}
+    \caption{\label{fig:QLadder}\textit{Example of sequential innovations in a given product line, for different generations.}}
 \end{figure}
 
 \begin{table}[!htbp] \centering 
@@ -528,11 +530,6 @@ R$^{2}$ & \multicolumn{1}{c}{0.0004} & \multicolumn{1}{c}{0.001} & \multicolumn{
 \textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\ 
 \end{tabular} 
 \end{table}
-
-\begin{figure}[htb]\centering \captionsetup{width=5.8in}
-    \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{QLadder.png}}}
-    \caption{\label{fig:QLadder}\textit{Example of sequential innovations in a given product line, for different generations.}}
-\end{figure}
 
 \begin{figure}[htb]\centering \captionsetup{width=5.8in}
     \fbox{\resizebox{3.0in}{2.0in}{\includegraphics{SameClass_hist.png}}}
